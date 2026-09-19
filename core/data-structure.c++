@@ -2,7 +2,7 @@
 using namespace std;
 
 
-// Function to print even numbers from n to 1 recursively
+// Function to print even numbers from n to 1 recursively:
 void printNumbers(int n){
     if(n>0){
         if(n%2==0)
@@ -12,8 +12,13 @@ void printNumbers(int n){
 }
 
 
-
-
+// Function to Fibonacci Series:
+int fibonacci (int n){
+    if(n<=1)
+        return n;
+    else
+        return fibonacci(n-1)+fibonacci(n-2);
+}
 
 
 
