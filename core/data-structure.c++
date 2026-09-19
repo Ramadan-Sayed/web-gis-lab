@@ -13,6 +13,17 @@ void printNumbers(int n){
 
 
 // Function to Fibonacci Series:
+int fibonacciPhase1(int n){
+    int num1=0, num2=1, current=0;
+    
+    for(int i=2; i<=n; i++) {
+        current = num1 + num2;
+        num2 = num1;
+        num1 = current;
+    }
+    return current;
+}
+// By recursion: 
 int fibonacci (int n){
     if(n<=1)
         return n;
