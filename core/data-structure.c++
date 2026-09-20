@@ -1,6 +1,28 @@
 #include <iostream>
 using namespace std;
 
+/*
+    Recursion Part 1: 
+*/
+//Function to print numbers from n to 1:
+void fun(int n){
+    if(n==0)            //base case
+        return ;
+    print("%d\n",n);
+    fun(n-1);
+}
+// تعديل بسيط على الدالة السابقة لطباعة الارقام من الاصغر إلى الاكبر 
+                void fun(int n){
+                    if(n==0)            //base case
+                        return ;
+                    fun(n-1);
+                    print("%d\n",n);
+                }
+
+
+
+
+                
 
 // Function to print even numbers from n to 1 recursively:
 void printNumbers(int n){
@@ -9,8 +31,7 @@ void printNumbers(int n){
             cout<<n<<" ";
         printNumbers(n-1);
     }
-}
-
+}                  
 
 // Function to Fibonacci Series:
 int fibonacciPhase1(int n){
@@ -24,12 +45,12 @@ int fibonacciPhase1(int n){
     return current;
 }
 // By recursion: 
-int fibonacci (int n){
-    if(n<=1)
-        return n;
-    else
-        return fibonacci(n-1)+fibonacci(n-2);
-}
+                int fibonacciPhase2 (int n){
+                    if(n<=1)
+                        return n;
+                    else
+                        return fibonacci(n-1)+fibonacci(n-2);
+                }
 
 
 
