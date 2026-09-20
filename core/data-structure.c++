@@ -11,6 +11,7 @@ void fun(int n){
     print("%d\n",n);
     fun(n-1);
 }
+
 // تعديل بسيط على الدالة السابقة لطباعة الارقام من الاصغر إلى الاكبر 
                 void fun(int n){
                     if(n==0)            //base case
@@ -22,7 +23,6 @@ void fun(int n){
 
 
 
-                
 
 // Function to print even numbers from n to 1 recursively:
 void printNumbers(int n){
