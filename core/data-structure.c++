@@ -19,8 +19,15 @@ void fun(int n){
                     fun(n-1);
                     print("%d\n",n);
                 }
-
-
+       
+//Problem Solving (DS1)
+int findNthNumber (int x, int y, int n){
+    if(n==1)
+        return x;
+    if(n==2)
+        return y;
+    return findNthNumber(x, y, n-1) + findNthNumber(x, y, n-2);
+}
 
 
 
