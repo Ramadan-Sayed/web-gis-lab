@@ -39,6 +39,14 @@ int findNthNumber (int x, int y, int n){
 }
 
 
+int sumOfDigits(int n){
+    if( n == 0)
+        return 0;
+    else 
+        return n%10 + sumofDigs( n / 10);
+}
+
+
 
 
 
