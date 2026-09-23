@@ -29,6 +29,17 @@ int findNthNumber (int x, int y, int n){
     return findNthNumber(x, y, n-1) + findNthNumber(x, y, n-2);
 }
 
+/*
+    Recursion Part : 
+*/int countDigits(int n){
+    if(n == 0)
+        return 0;
+    else
+        return 1+countDigits(n /10);
+}
+
+
+
 
 
 // Function to print even numbers from n to 1 recursively:
