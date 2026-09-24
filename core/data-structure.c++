@@ -58,6 +58,17 @@ int countEvenDigit(int n){
     }
 }
 
+int countOddDigit(int n){
+    if(n==0)
+        return 0;
+    else{
+        int lastDigit  = n % 10;
+        if(lastDigit %2 !=0)
+            return 1 + countOddDigit(n / 10);
+        else 
+            return countOddDigit(n / 10);
+    }
+}
 
 
 
