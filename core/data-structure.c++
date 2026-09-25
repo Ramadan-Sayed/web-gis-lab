@@ -82,6 +82,18 @@ int sumOddDigits(int n){
     }
 }
 
+int productOddDigits(int n){
+    if(n==0)
+        return 1;
+    else{
+        int lastDigit = n % 10;
+        if(lastDigit % 2 != 0)
+            return lastDigit * productOddDigits( n /10 );
+        else
+            return productOddDigits( n / 10 );
+    }
+}
+
 
 
 
