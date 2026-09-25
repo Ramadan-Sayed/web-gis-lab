@@ -32,13 +32,6 @@ int findNthNumber (int x, int y, int n){
 /*
     Recursion Part 2: 
 */
-int countDigits(int n){
-    if(n == 0)
-        return 0;
-    else
-        return 1+countDigits(n /10);
-}
-
 int sumOfDigits(int n){
     if( n == 0)
         return 0;
@@ -46,7 +39,14 @@ int sumOfDigits(int n){
         return n%10 + sumofDigs( n / 10);
 }
 
-int countEvenDigit(int n){
+int countDigits(int n){
+    if(n == 0)
+        return 0;
+    else
+        return 1+countDigits(n /10);
+}
+
+int countEvenDigits(int n){
     if(n==0)
         return 0;
     else{
@@ -58,7 +58,7 @@ int countEvenDigit(int n){
     }
 }
 
-int countOddDigit(int n){
+int countOddDigits(int n){
     if(n==0)
         return 0;
     else{
@@ -69,6 +69,23 @@ int countOddDigit(int n){
             return countOddDigit(n / 10);
     }
 }
+
+int sumOddDigits(int n){
+    if(n==0)
+        return 0;
+    else{
+        int lastDigit = n%10;
+        if(lastDigit % 2 != 0)
+            return lastDigit + sumOddDigits( n / 10);
+        else
+            return sumOddDigits( n / 10);
+    }
+}
+
+
+
+
+
 
 
 
