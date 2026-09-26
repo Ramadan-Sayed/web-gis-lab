@@ -60,6 +60,10 @@ int countEvenDigits(int n){
 int sumEvenDigits(int n){
     return (n==0) ? 0 :((n%2==0) ? n%10 : 0 ) + sumEvenDigits(n/10);
 }
+int productEvenDigits(int n){
+        return (n==0) ? 1 :((n%2==0) ? n%10 : 1 ) + productEvenDigits(n/10);
+
+}
 
 int countOddDigits(int n){
     if(n==0)
