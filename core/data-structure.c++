@@ -38,6 +38,21 @@ int sumOfDigits(int n){
     else 
         return n%10 + sumofDigs( n / 10);
 }
+int sumEvenDigits(int n){
+    return (n==0) ? 0 :((n%2==0) ? n%10 : 0 ) + sumEvenDigits(n/10);
+}
+int sumOddDigits(int n){
+    if(n==0)
+        return 0;
+    else{
+        int lastDigit = n%10;
+        if(lastDigit % 2 != 0)
+            return lastDigit + sumOddDigits( n / 10);
+        else
+            return sumOddDigits( n / 10);
+    }
+}
+
 
 int countDigits(int n){
     if(n == 0)
@@ -45,7 +60,6 @@ int countDigits(int n){
     else
         return 1+countDigits(n /10);
 }
-
 int countEvenDigits(int n){
     if(n==0)
         return 0;
@@ -57,14 +71,6 @@ int countEvenDigits(int n){
             return countEvenDigit(n / 10);
     }
 }
-int sumEvenDigits(int n){
-    return (n==0) ? 0 :((n%2==0) ? n%10 : 0 ) + sumEvenDigits(n/10);
-}
-int productEvenDigits(int n){
-        return (n==0) ? 1 :((n%2==0) ? n%10 : 1 ) + productEvenDigits(n/10);
-
-}
-
 int countOddDigits(int n){
     if(n==0)
         return 0;
@@ -76,15 +82,14 @@ int countOddDigits(int n){
             return countOddDigit(n / 10);
     }
 }
-int sumOddDigits(int n){
+
+
+int productAllDigits(int n){
     if(n==0)
-        return 0;
+        return 1;
     else{
         int lastDigit = n%10;
-        if(lastDigit % 2 != 0)
-            return lastDigit + sumOddDigits( n / 10);
-        else
-            return sumOddDigits( n / 10);
+        return lastDigit * productOddDigits( n /10 );
     }
 }
 int productOddDigits(int n){
@@ -98,6 +103,14 @@ int productOddDigits(int n){
             return productOddDigits( n / 10 );
     }
 }
+int productEvenDigits(int n){
+        return (n==0) ? 1 :((n%2==0) ? n%10 : 1 ) + productEvenDigits(n/10);
+
+}
+
+
+
+
 
 
 
