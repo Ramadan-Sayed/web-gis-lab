@@ -1,25 +1,37 @@
 #include <iostream>
 using namespace std;
 
+
+
+int convert(){
+    int binary, int decimal=0, int y=1;
+    printf("Enter a binary number: ");
+    scanf("%d",&binary);
+    while(binary){
+        decimal += (binary%10)*y;
+        binary /= 10;
+        y *= 2;
+    }
+    printf("%d", decimal);
+ 
+}
+
+
 /*
     Recursion Part 1: 
 */
-//Function to print numbers from n to 1:
-void fun(int n){
+void printNumbers(int n){
+    if(n==0)            //base case
+        return ;
+    printNumbers(n-1);
+    print("%d\n",n);
+}
+void printReversedNumbrs(int n){
     if(n==0)            //base case
         return ;
     print("%d\n",n);
-    fun(n-1);
+    printReversedNumbrs(n-1);
 }
-
-// تعديل بسيط على الدالة السابقة لطباعة الارقام من الاصغر إلى الاكبر 
-                void fun(int n){
-                    if(n==0)            //base case
-                        return ;
-                    fun(n-1);
-                    print("%d\n",n);
-                }
-       
 //Problem Solving (DS1)
 int findNthNumber (int x, int y, int n){
     if(n==1)
@@ -28,6 +40,7 @@ int findNthNumber (int x, int y, int n){
         return y;
     return findNthNumber(x, y, n-1) + findNthNumber(x, y, n-2);
 }
+
 
 /*
     Recursion Part 2: 
@@ -52,7 +65,6 @@ int sumOddDigits(int n){
             return sumOddDigits( n / 10);
     }
 }
-
 
 int countDigits(int n){
     if(n == 0)
@@ -83,7 +95,6 @@ int countOddDigits(int n){
     }
 }
 
-
 int productAllDigits(int n){
     if(n==0)
         return 1;
@@ -107,7 +118,6 @@ int productEvenDigits(int n){
         return (n==0) ? 1 :((n%2==0) ? n%10 : 1 ) + productEvenDigits(n/10);
 
 }
-
 
 int factorial (int n){
     if(n==0 || n==1)
