@@ -3,8 +3,8 @@ using namespace std;
 
 
 
-int convert(){
-    int binary, int decimal=0, int y=1;
+int convertBinaryToDecimal(){
+    int binary, decimal=0, y=1;
     printf("Enter a binary number: ");
     scanf("%d",&binary);
     while(binary){
@@ -24,12 +24,12 @@ void printNumbers(int n){
     if(n==0)            //base case
         return ;
     printNumbers(n-1);
-    print("%d\n",n);
+    printf("%d\n",n);
 }
 void printReversedNumbrs(int n){
     if(n==0)            //base case
         return ;
-    print("%d\n",n);
+    printf("%d\n",n);
     printReversedNumbrs(n-1);
 }
 //Problem Solving (DS1)
@@ -49,7 +49,7 @@ int sumOfDigits(int n){
     if( n == 0)
         return 0;
     else 
-        return n%10 + sumofDigs( n / 10);
+        return n%10 + sumOfDigits( n / 10);
 }
 int sumEvenDigits(int n){
     return (n==0) ? 0 :((n%2==0) ? n%10 : 0 ) + sumEvenDigits(n/10);
@@ -78,9 +78,9 @@ int countEvenDigits(int n){
     else{
         int lastDigit  = n % 10;
         if(lastDigit %2 ==0)
-            return 1 + countEvenDigit(n / 10);
+            return 1 + countEvenDigits(n / 10);
         else 
-            return countEvenDigit(n / 10);
+            return countEvenDigits(n / 10);
     }
 }
 int countOddDigits(int n){
@@ -89,9 +89,9 @@ int countOddDigits(int n){
     else{
         int lastDigit  = n % 10;
         if(lastDigit %2 !=0)
-            return 1 + countOddDigit(n / 10);
+            return 1 + countOddDigits(n / 10);
         else 
-            return countOddDigit(n / 10);
+            return countOddDigits(n / 10);
     }
 }
 
