@@ -35,6 +35,21 @@ void rectangle_star(){
         printf("\n");
     }
 }
+void hollow_rectangle_star(){
+    int length, width;
+    printf("Please, enter length and width of rectangle: ");
+    scanf("%d%d", &length, &width);
+    for(int i=0; i<width; i++){
+        for(int j=0; j<length; j++)
+            if(i==0 || i==width-1 || j==0 || j==length-1)
+                printf("* ");
+            else    
+                printf("  ");
+        printf("\n");
+    }
+}
+
+
 
 
 int main(){
