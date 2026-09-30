@@ -25,6 +25,17 @@ void hollow_square_star(){
     }
 }
 
+void rectangle_star(){
+    int length, width;
+    printf("Please, enter length and width of rectangle: ");
+    scanf("%d%d", &length, &width);
+    for(int i=0; i<width; i++){
+        for(int j=0; j<length; j++)
+            printf("* ");
+        printf("\n");
+    }
+}
+
 
 int main(){
     square_star();
