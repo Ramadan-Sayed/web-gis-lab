@@ -73,11 +73,21 @@ void merrored_right_triangle_star(){
     }
 }
 
+void invertec_right_triangle(){
+    int n; 
+    printf("Please, enter a number: ");
+    scanf("%d",&n);
+    for(int i=n-1; i>=0; i--){
+        for(int j=0; j<=i; j++)
+            printf("* ");
+        printf("\n");
+    }
+}
 
 
 
 int main(){
-    merrored_right_triangle_star();
+    invertec_right_triangle();
 
     return 0;
 }
