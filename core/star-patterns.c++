@@ -73,7 +73,7 @@ void merrored_right_triangle_star(){
     }
 }
 
-void invertec_right_triangle(){
+void inverted_right_triangle_star(){
     int n; 
     printf("Please, enter a number: ");
     scanf("%d",&n);
@@ -82,12 +82,32 @@ void invertec_right_triangle(){
             printf("* ");
         printf("\n");
     }
+    /*
+    for(int i=0; i<n; i++){
+        for(int j=0; j<n-i; j++)
+            printf("* ");
+        printf("\n");
+    }
+    */
+}
+void inverted_triangle_star(){
+    int n; 
+    printf("Please, enter a number: ");
+    scanf("%d",&n);
+    for(int i=0; i<n; i++){
+        for(int j=0; j<n; j++)
+            if(j<i) 
+                printf("  ");
+            else
+                printf("* ");
+        printf("\n");
+    }
 }
 
 
 
 int main(){
-    invertec_right_triangle();
+    inverted_triangle_star();
 
     return 0;
 }
