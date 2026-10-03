@@ -7,7 +7,7 @@ void binary_program(){
     scanf("%d",&binary);
 
     printf("%d\n", binary);
-    
+
     while(binary != 0){
         decimal += (binary%10)*y;
         binary /= 10;
@@ -18,6 +18,7 @@ void binary_program(){
     printf("%x   %X\n", decimal, decimal);
     
 }
+
 void convert_decimals(){
     int decimal, binary=0, y=1, remainder;
     printf("Enter a decimal number: ");
@@ -31,6 +32,7 @@ void convert_decimals(){
 
     printf("%d\n",binary);
 }
+
 void deadline_challenge(){
     int allotted_time, taken_time;
     printf("Please, enter the number of days allotted for a project: ");
@@ -45,9 +47,26 @@ void deadline_challenge(){
         printf("You have missed the deadline, Please try to complete tasks on time.\n");
 }
 
+void average_number(){
+    int num, sum=0;
+    printf("Enter the number of employees: ");
+    scanf("%d",&num);
+
+    int employee[num];
+    for(int i=0; i<num; i++){
+        printf("Enter tasks completed by employee %d: ",i+1);
+        scanf("%d",&employee[i]);
+    }
+
+    for(int i=0; i<num; i++)
+        sum += employee[i];
+    printf("Avarge tasks completed per employee: %.2f\n", (float)sum/num);
+}
+
+
 
 int main(){
-    deadline_challenge();
+    average_number();
     main();
 
 
