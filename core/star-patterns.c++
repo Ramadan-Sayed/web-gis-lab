@@ -1,4 +1,5 @@
 #include <iostream>
+#include <math.h>
 using namespace std;
 
 void square_star(){
@@ -104,10 +105,21 @@ void inverted_triangle_star(){
     }
 }
 
+void exponential_increasing_star(){
+    int n; 
+    printf("Enter a number: ");
+    scanf("%d",&n);
+
+    for(int i=0; i<n; i++){
+        for(int j=0; j<pow(2,i); j++)
+            printf("* ");
+        printf("\n");
+    }
+}
 
 
 int main(){
-    inverted_triangle_star();
+    exponential_increasing_star();
 
     return 0;
 }
