@@ -116,10 +116,21 @@ void exponential_increasing_star(){
         printf("\n");
     }
 }
+void merrored_exponential_increasing_star(){
+    int n; 
+    printf("Enter a number: ");
+    scanf("%d",&n);
+
+    for(int i=n-1; i>=0; i--){
+        for(int j=0; j<pow(2,i); j++)
+            printf("* ");
+        printf("\n");
+    }
+}
 
 
 int main(){
-    exponential_increasing_star();
+    merrored_exponential_increasing_star();
 
     return 0;
 }
