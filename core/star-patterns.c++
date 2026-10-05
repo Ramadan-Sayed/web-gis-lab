@@ -29,6 +29,29 @@ void left_rhombus_star(){
         printf("\n");
     }
 }
+void rhombus_star(){
+    int n; 
+    printf("Enter a number: ");
+    scanf("%d",&n);
+
+    for(int i=n-1; i>=0; i--){
+        for(int j=0; j<i; j++)
+            printf("  ");
+        for(int j=0; j<n; j++)
+            printf("* ");
+        printf("\n");
+    }
+     for(int i=0; i<n; i++){
+        for(int j=0; j<i; j++)
+            printf("  ");
+        for(int j=0; j<n; j++)
+            printf("* ");
+        printf("\n");
+    }
+}
+
+
+
 
 void square_star(){
     int side;
@@ -158,7 +181,7 @@ void merrored_exponential_increasing_star(){
 
 
 int main(){
-    left_rhombus_star();
+    rhombus_star();
 
     return 0;
 }
