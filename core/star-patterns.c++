@@ -53,8 +53,7 @@ void rhombus_star(){
     }
 }
 
-void square_star()
-{
+void square_star(){
     int side;
     printf("Enter a side length");
     scanf("%d", &side);
@@ -65,8 +64,7 @@ void square_star()
         printf("\n");
     }
 }
-void hollow_square_star()
-{
+void hollow_square_star(){
     int side;
     printf("Enter a side of square: ");
     scanf("%d", &side);
@@ -81,8 +79,7 @@ void hollow_square_star()
     }
 }
 
-void rectangle_star()
-{
+void rectangle_star(){
     int length, width;
     printf("Please, enter length and width of rectangle: ");
     scanf("%d%d", &length, &width);
@@ -93,8 +90,7 @@ void rectangle_star()
         printf("\n");
     }
 }
-void hollow_rectangle_star()
-{
+void hollow_rectangle_star(){
     int length, width;
     printf("Please, enter length and width of rectangle: ");
     scanf("%d%d", &length, &width);
@@ -109,8 +105,7 @@ void hollow_rectangle_star()
     }
 }
 
-void right_triangle_star()
-{
+void right_triangle_star(){
     int n;
     printf("Enter a number: ");
     scanf("%d", &n);
@@ -121,8 +116,7 @@ void right_triangle_star()
         printf("\n");
     }
 }
-void merrored_right_triangle_star()
-{
+void merrored_right_triangle_star(){
     int n;
     printf("Enter a number: ");
     scanf("%d", &n);
@@ -137,8 +131,7 @@ void merrored_right_triangle_star()
     }
 }
 
-void inverted_right_triangle_star()
-{
+void inverted_right_triangle_star(){
     int n;
     printf("Please, enter a number: ");
     scanf("%d", &n);
@@ -156,8 +149,7 @@ void inverted_right_triangle_star()
     }
     */
 }
-void inverted_triangle_star()
-{
+void inverted_triangle_star(){
     int n;
     printf("Please, enter a number: ");
     scanf("%d", &n);
@@ -172,8 +164,7 @@ void inverted_triangle_star()
     }
 }
 
-void exponential_increasing_star()
-{
+void exponential_increasing_star(){
     int n;
     printf("Enter a number: ");
     scanf("%d", &n);
@@ -185,8 +176,7 @@ void exponential_increasing_star()
         printf("\n");
     }
 }
-void merrored_exponential_increasing_star()
-{
+void merrored_exponential_increasing_star(){
     int n;
     printf("Enter a number: ");
     scanf("%d", &n);
@@ -213,10 +203,24 @@ void pyramid_star(){
         printf("\n");
     }
 }
+void inverted_pyramid_star(){
+    int n;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    for (int i=n-1; i>=0; i--){
+        for (int j=0; j<=n-i-1; j++)
+            printf("  ");
+        for (int j = 0; j < 2 * i + 1; j++)
+            printf("* ");
+
+        printf("\n");
+    }
+}
 
 int main()
 {
-    pyramid_star();
+    inverted_pyramid_star();
 
     return 0;
 }
