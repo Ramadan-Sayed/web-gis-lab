@@ -203,6 +203,25 @@ void pyramid_star(){
         printf("\n");
     }
 }
+void hollow_pyramid_star(){
+    int n;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    for (int i=0; i<n-1; i++){
+        for (int j=1; j<=n-i-1; j++)
+            printf("  ");
+        for (int j=0; j<2*i+1; j++)
+            if(j==0 || j==2*i)
+                printf("* ");
+            else
+                printf("  ");
+
+        printf("\n");
+    }
+    for(int i=0; i<2*n-1; i++)
+        printf("* ");
+}
 void inverted_pyramid_star(){
     int n;
     printf("Enter a number: ");
@@ -218,9 +237,14 @@ void inverted_pyramid_star(){
     }
 }
 
+
+
+
+
+
 int main()
 {
-    inverted_pyramid_star();
+    hollow_pyramid_star();
 
     return 0;
 }
