@@ -257,6 +257,29 @@ void inverted_hollow_pyramid_star(){
     }
 }
 
+void diamond_star(){
+     int n;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    for (int i=0; i<n/2; i++){
+        for (int j=0; j<=n-i-1; j++)
+            printf("  ");
+        for (int j = 0; j < 2 * i + 1; j++)
+            printf("* ");
+
+        printf("\n");
+    }
+
+    for (int i=n/2; i>=0; i--){
+        for (int j=0; j<=n-i-1; j++)
+            printf("  ");
+        for (int j = 0; j < 2 * i + 1; j++)
+            printf("* ");
+
+        printf("\n");
+    }
+}
 
 
 
@@ -264,7 +287,8 @@ void inverted_hollow_pyramid_star(){
 
 int main()
 {
-    inverted_hollow_pyramid_star();
+    diamond_star();
+    main();
 
     return 0;
 }
