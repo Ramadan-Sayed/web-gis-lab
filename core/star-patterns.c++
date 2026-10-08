@@ -2,7 +2,8 @@
 #include <math.h>
 using namespace std;
 
-void right_rhombus_star(){
+void right_rhombus_star()
+{
     int n;
     printf("Enter a number: ");
     scanf("%d", &n);
@@ -16,7 +17,8 @@ void right_rhombus_star(){
         printf("\n");
     }
 }
-void left_rhombus_star(){
+void left_rhombus_star()
+{
     int n;
     printf("Enter a number: ");
     scanf("%d", &n);
@@ -30,7 +32,8 @@ void left_rhombus_star(){
         printf("\n");
     }
 }
-void rhombus_star(){
+void rhombus_star()
+{
     int n;
     printf("Enter a number: ");
     scanf("%d", &n);
@@ -53,7 +56,8 @@ void rhombus_star(){
     }
 }
 
-void square_star(){
+void square_star()
+{
     int side;
     printf("Enter a side length");
     scanf("%d", &side);
@@ -64,7 +68,8 @@ void square_star(){
         printf("\n");
     }
 }
-void hollow_square_star(){
+void hollow_square_star()
+{
     int side;
     printf("Enter a side of square: ");
     scanf("%d", &side);
@@ -79,7 +84,8 @@ void hollow_square_star(){
     }
 }
 
-void rectangle_star(){
+void rectangle_star()
+{
     int length, width;
     printf("Please, enter length and width of rectangle: ");
     scanf("%d%d", &length, &width);
@@ -90,7 +96,8 @@ void rectangle_star(){
         printf("\n");
     }
 }
-void hollow_rectangle_star(){
+void hollow_rectangle_star()
+{
     int length, width;
     printf("Please, enter length and width of rectangle: ");
     scanf("%d%d", &length, &width);
@@ -105,7 +112,8 @@ void hollow_rectangle_star(){
     }
 }
 
-void right_triangle_star(){
+void right_triangle_star()
+{
     int n;
     printf("Enter a number: ");
     scanf("%d", &n);
@@ -116,7 +124,8 @@ void right_triangle_star(){
         printf("\n");
     }
 }
-void merrored_right_triangle_star(){
+void merrored_right_triangle_star()
+{
     int n;
     printf("Enter a number: ");
     scanf("%d", &n);
@@ -131,7 +140,8 @@ void merrored_right_triangle_star(){
     }
 }
 
-void inverted_right_triangle_star(){
+void inverted_right_triangle_star()
+{
     int n;
     printf("Please, enter a number: ");
     scanf("%d", &n);
@@ -149,7 +159,8 @@ void inverted_right_triangle_star(){
     }
     */
 }
-void inverted_triangle_star(){
+void inverted_triangle_star()
+{
     int n;
     printf("Please, enter a number: ");
     scanf("%d", &n);
@@ -164,7 +175,8 @@ void inverted_triangle_star(){
     }
 }
 
-void exponential_increasing_star(){
+void exponential_increasing_star()
+{
     int n;
     printf("Enter a number: ");
     scanf("%d", &n);
@@ -176,7 +188,8 @@ void exponential_increasing_star(){
         printf("\n");
     }
 }
-void merrored_exponential_increasing_star(){
+void merrored_exponential_increasing_star()
+{
     int n;
     printf("Enter a number: ");
     scanf("%d", &n);
@@ -189,13 +202,15 @@ void merrored_exponential_increasing_star(){
     }
 }
 
-void pyramid_star(){
+void pyramid_star()
+{
     int n;
     printf("Enter a number: ");
     scanf("%d", &n);
 
-    for (int i=0; i<n; i++){
-        for (int j=0; j<=n-i-1; j++)
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j <= n - i - 1; j++)
             printf("  ");
         for (int j = 0; j < 2 * i + 1; j++)
             printf("* ");
@@ -203,33 +218,37 @@ void pyramid_star(){
         printf("\n");
     }
 }
-void hollow_pyramid_star(){
+void hollow_pyramid_star()
+{
     int n;
     printf("Enter a number: ");
     scanf("%d", &n);
 
-    for (int i=0; i<n-1; i++){
-        for (int j=1; j<=n-i-1; j++)
+    for (int i = 0; i < n - 1; i++)
+    {
+        for (int j = 1; j <= n - i - 1; j++)
             printf("  ");
-        for (int j=0; j<2*i+1; j++)
-            if(j==0 || j==2*i)
+        for (int j = 0; j < 2 * i + 1; j++)
+            if (j == 0 || j == 2 * i)
                 printf("* ");
             else
                 printf("  ");
 
         printf("\n");
     }
-    for(int i=0; i<2*n-1; i++)
+    for (int i = 0; i < 2 * n - 1; i++)
         printf("* ");
 }
 
-void inverted_pyramid_star(){
+void inverted_pyramid_star()
+{
     int n;
     printf("Enter a number: ");
     scanf("%d", &n);
 
-    for (int i=n-1; i>=0; i--){
-        for (int j=0; j<=n-i-1; j++)
+    for (int i = n - 1; i >= 0; i--)
+    {
+        for (int j = 0; j <= n - i - 1; j++)
             printf("  ");
         for (int j = 0; j < 2 * i + 1; j++)
             printf("* ");
@@ -237,18 +256,20 @@ void inverted_pyramid_star(){
         printf("\n");
     }
 }
-void inverted_hollow_pyramid_star(){
+void inverted_hollow_pyramid_star()
+{
     int n;
     printf("Enter a number: ");
     scanf("%d", &n);
 
-    for(int i=1; i<2*n-1; i++)
+    for (int i = 1; i < 2 * n - 1; i++)
         printf("* ");
-    for (int i=n-1; i>=0; i--){
-        for (int j=1; j<=n-i-1; j++)
+    for (int i = n - 1; i >= 0; i--)
+    {
+        for (int j = 1; j <= n - i - 1; j++)
             printf("  ");
-        for (int j = 0; j < 2 * i+1; j++)
-            if(j==0 || j==2*i)
+        for (int j = 0; j < 2 * i + 1; j++)
+            if (j == 0 || j == 2 * i)
                 printf("* ");
             else
                 printf("  ");
@@ -257,13 +278,15 @@ void inverted_hollow_pyramid_star(){
     }
 }
 
-void diamond_star(){
-     int n;
+void diamond_star()
+{
+    int n;
     printf("Enter a number: ");
     scanf("%d", &n);
 
-    for (int i=0; i<n/2; i++){
-        for (int j=0; j<=n-i-1; j++)
+    for (int i = 0; i < n / 2; i++)
+    {
+        for (int j = 0; j <= n - i - 1; j++)
             printf("  ");
         for (int j = 0; j < 2 * i + 1; j++)
             printf("* ");
@@ -271,8 +294,9 @@ void diamond_star(){
         printf("\n");
     }
 
-    for (int i=n/2; i>=0; i--){
-        for (int j=0; j<=n-i-1; j++)
+    for (int i = n / 2; i >= 0; i--)
+    {
+        for (int j = 0; j <= n - i - 1; j++)
             printf("  ");
         for (int j = 0; j < 2 * i + 1; j++)
             printf("* ");
@@ -280,14 +304,42 @@ void diamond_star(){
         printf("\n");
     }
 }
+void hollow_diamond_star()
+{
+    int n;
+    printf("Enter a number: ");
+    scanf("%d", &n);
 
+    for (int i = 0; i < n / 2; i++)
+    {
+        for (int j = 1; j <= n - i - 1; j++)
+            printf("  ");
+        for (int j = 0; j < 2 * i + 1; j++)
+            if (j == 0 || j == 2 * i)
+                printf("* ");
+            else
+                printf("  ");
 
+        printf("\n");
+    }
 
+    for (int i = n / 2; i >= 0; i--)
+    {
+        for (int j = 1; j <= n - i - 1; j++)
+            printf("  ");
+        for (int j = 0; j < 2 * i + 1; j++)
+            if (j == 0 || j == 2 * i)
+                printf("* ");
+            else
+                printf("  ");
 
+        printf("\n");
+    }
+}
 
 int main()
 {
-    diamond_star();
+    hollow_diamond_star();
     main();
 
     return 0;
