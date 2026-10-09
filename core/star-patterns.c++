@@ -388,7 +388,7 @@ void inverted_same_number_row(){
 
 int main()
 {
-    same_number_row();
+    inverted_same_number_row();
     main();
 
     return 0;
