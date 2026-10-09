@@ -349,11 +349,23 @@ void natural_number_triangle(){
         printf("\n");
     }
 }
+void inverted_natural_number_triangle(){
+    int n, a=1; 
+    printf("Enter a number: ");
+    scanf("%d",&n);
+
+
+    for(int i=n-1; i>=0; i--){
+        for(int j=0; j<=i; j++)
+            printf("%d ",a++);
+        printf("\n");
+    }
+}
 
 
 int main()
 {
-    natural_number_triangle();
+    inverted_natural_number_triangle();
     main();
 
     return 0;
