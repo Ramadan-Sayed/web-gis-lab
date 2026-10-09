@@ -337,9 +337,23 @@ void hollow_diamond_star()
     }
 }
 
+void natural_number_triangle(){
+    int n, a=1; 
+    printf("Enter a number: ");
+    scanf("%d",&n);
+
+
+    for(int i=0; i<n; i++){
+        for(int j=0; j<=i; j++)
+            printf("%d ",a++);
+        printf("\n");
+    }
+}
+
+
 int main()
 {
-    hollow_diamond_star();
+    natural_number_triangle();
     main();
 
     return 0;
