@@ -362,10 +362,33 @@ void inverted_natural_number_triangle(){
     }
 }
 
+void same_number_row(){
+    int n; 
+    printf("Enter a number: ");
+    scanf("%d",&n);
+
+    for(int i=0; i<n; i++){
+        for(int j=0; j<=i; j++)
+            printf("%d ", i+1);
+        printf("\n");
+    }
+}
+void inverted_same_number_row(){
+    int n; 
+    printf("Enter a number: ");
+    scanf("%d",&n);
+
+    for(int i=n-1; i>=0; i--){
+        for(int j=0; j<=i; j++)
+            printf("%d ", i+1);
+        printf("\n");
+    }
+}
+
 
 int main()
 {
-    inverted_natural_number_triangle();
+    same_number_row();
     main();
 
     return 0;
