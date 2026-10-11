@@ -83,6 +83,20 @@ void hollow_square_star()
         printf("\n");
     }
 }
+void binary_square(){
+    int n, a=1;
+    printf("Please, enter a number: ");
+    scanf("%d", &n);
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j <n; j++)
+            if (i == 0 || i == n - 1 || j == 0 || j == n - 1)
+                printf("%d ", !a);
+            else
+                printf("%d ", a);
+        printf("\n");
+    }
+}
 
 void rectangle_star()
 {
@@ -427,7 +441,7 @@ void inverted_multiplication_table_triangle(){
 
 int main()
 {
-    binary_rectangle();
+    binary_square();
     main();
 
     return 0;
