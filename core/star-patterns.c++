@@ -396,11 +396,22 @@ void multiplication_table_triangle(){
         printf("\n");
     }
 }
+void inverted_multiplication_table_triangle(){
+    int n;
+    printf("Enter a number: ");
+    scanf("%d",&n);
+
+    for(int i=n-1; i>=0; i--){
+        for(int j=0; j<=i; j++)
+            printf("%d ",i*j);
+        printf("\n");
+    }
+}
 
 
 int main()
 {
-    multiplication_table_triangle();
+    inverted_multiplication_table_triangle();
     main();
 
     return 0;
