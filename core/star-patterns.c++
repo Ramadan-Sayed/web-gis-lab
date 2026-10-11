@@ -385,10 +385,22 @@ void inverted_same_number_row(){
     }
 }
 
+void multiplication_table_triangle(){
+    int n;
+    printf("Enter a number: ");
+    scanf("%d",&n);
+
+    for(int i=0; i<n; i++){
+        for(int j=0; j<=i; j++)
+            printf("%d ",i*j);
+        printf("\n");
+    }
+}
+
 
 int main()
 {
-    inverted_same_number_row();
+    multiplication_table_triangle();
     main();
 
     return 0;
