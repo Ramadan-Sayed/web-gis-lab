@@ -153,6 +153,20 @@ void binary_rectangle(){
         printf("\n");
     }
 }
+void binary_side_rectangle(){
+    int length, width, a=1;
+    printf("Please, enter length and width of rectangle: ");
+    scanf("%d%d", &length, &width);
+    for (int i = 0; i < width; i++)
+    {
+        for (int j = 0; j < length; j++)
+            if (i == 0 || i == width - 1 || j == 0 || j == length - 1)
+                printf("%d ", a);
+            else
+                printf("%d ", !a);
+        printf("\n");
+    }
+}
 
 void right_triangle_star()
 {
@@ -455,7 +469,7 @@ void inverted_multiplication_table_triangle(){
 
 int main()
 {
-    binary_side_square();
+    binary_side_rectangle();
     main();
 
     return 0;
