@@ -478,12 +478,26 @@ void binary_number_triangle(){
         printf("\n");
     }
 }
+void inverted_binary_number_triangle(){
+    int n, a=1, i;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    for(i=n-1; i>=0; i--){
+        for(int j=0; j<=i; j++){
+            printf("%d ", a);
+            a = !a;
+        }
+        a = i%2;
+        printf("\n");
+    }
+}
 
 
 
 int main()
 {
-   binary_number_triangle();
+   inverted_binary_number_triangle();
     main();
 
     return 0;
