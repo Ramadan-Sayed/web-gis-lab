@@ -508,11 +508,25 @@ void palindrome_triangle(){
         printf("\n");
     }
 }
+void inverted_palindrome_triangle(){
+    int n, a=0;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    for(int i=2*n-2; i>=0; i-=2){
+        for(int j=0; j<=i; j++){
+            printf("%c ", 'A'+a);
+            a += j<i/2? 1: -1;
+        }
+        a=0;
+        printf("\n");
+    }
+}
 
 
 int main()
 {
-   palindrome_triangle();
+   inverted_palindrome_triangle();
     main();
 
     return 0;
