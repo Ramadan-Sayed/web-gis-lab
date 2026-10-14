@@ -464,7 +464,8 @@ void inverted_multiplication_table_triangle(){
     }
 }
 
-void binary_number_triangle(){
+void binary_number_triangle()
+{
     int n, a=1, i;
     printf("Enter a number: ");
     scanf("%d", &n);
@@ -493,11 +494,25 @@ void inverted_binary_number_triangle(){
     }
 }
 
+void palindrome_triangle(){
+    int n, a=0;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    for(int i=0; i<2*n; i+=2){
+        for(int j=0; j<=i; j++){
+            printf("%c ", 'A'+a);
+            a += j<i/2? 1: -1;
+        }
+        a=0;
+        printf("\n");
+    }
+}
 
 
 int main()
 {
-   inverted_binary_number_triangle();
+   palindrome_triangle();
     main();
 
     return 0;
