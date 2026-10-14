@@ -464,12 +464,26 @@ void inverted_multiplication_table_triangle(){
     }
 }
 
+void binary_number_triangle(){
+    int n, a=1, i;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    for(i=0; i<n; i++){
+        for(int j=0; j<=i; j++){
+            printf("%d ", a);
+            a = !a;
+        }
+        a = i%2;
+        printf("\n");
+    }
+}
 
 
 
 int main()
 {
-    binary_side_rectangle();
+   binary_number_triangle();
     main();
 
     return 0;
