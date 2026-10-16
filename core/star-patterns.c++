@@ -531,8 +531,8 @@ bool is_prime(int n){
             return false;
     return true;
 }
-void prime_numbers(){
-     int n, x=2;
+void prime_number_triangle(){
+    int n, x=2;
     printf("Enter a number: ");
     scanf("%d",&n);
 
@@ -547,12 +547,27 @@ void prime_numbers(){
         printf("\n");
     }
 }
+void prime_number_rectangle(){
+    int width, length, x=2;
+    printf("Enter a Width and Length: ");
+    scanf("%d%d",&width, &length);
 
+    for(int i=0; i<width; i++){
+        for(int j=0; j<length;){
+            if(is_prime(x)){
+                printf("%d  ", x);
+                 j++;
+            }
+            x++;
+        }
+        printf("\n");
+    }
+}
 
 
 int main()
 {
-    prime_numbers();
+    prime_number_rectangle();
     main();
 
     return 0;
