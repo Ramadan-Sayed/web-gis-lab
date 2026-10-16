@@ -523,11 +523,7 @@ void inverted_palindrome_triangle(){
     }
 }
 
-bool is_prime(){
-    int n;
-    printf("Enter a number: ");
-    scanf("%d",&n);
-
+bool is_prime(int n){
     if(n<=1)
         return false;
     for(int i=2; i*i<=n; i++)
@@ -535,10 +531,28 @@ bool is_prime(){
             return false;
     return true;
 }
+void prime_numbers(){
+     int n, x=2;
+    printf("Enter a number: ");
+    scanf("%d",&n);
+
+    for(int i=0; i<n; i++){
+        for(int j=0; j<=i;){
+            if(is_prime(x)){
+                printf("%d ", x);
+                 j++;
+            }
+            x++;
+        }
+        printf("\n");
+    }
+}
+
+
 
 int main()
 {
-   inverted_palindrome_triangle();
+    prime_numbers();
     main();
 
     return 0;
