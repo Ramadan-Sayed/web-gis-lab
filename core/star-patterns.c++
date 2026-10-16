@@ -555,8 +555,30 @@ void prime_number_rectangle(){
     for(int i=0; i<width; i++){
         for(int j=0; j<length;){
             if(is_prime(x)){
-                printf("%d  ", x);
+                if(x<=9)
+                    printf("%d%d    ", 0, x);
+                else
+                    printf("%d    ", x);
                  j++;
+            }
+            x++;
+        }
+        printf("\n");
+    }
+}
+void prime_number_square(){
+    int n, x=2;
+    printf("Enter a number: ");
+    scanf("%d",&n);
+
+    for(int i=0; i<n; i++){
+        for(int j=0; j<n;){
+            if(is_prime(x)){
+                if(x<=9)
+                    printf("%d%d    ", 0, x);
+                else
+                    printf("%d    ", x);
+                j++;
             }
             x++;
         }
@@ -567,7 +589,7 @@ void prime_number_rectangle(){
 
 int main()
 {
-    prime_number_rectangle();
+    prime_number_square();
     main();
 
     return 0;
