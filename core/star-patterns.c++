@@ -493,6 +493,22 @@ void inverted_binary_number_triangle(){
         printf("\n");
     }
 }
+void binary_number_rectangle(){
+     int length, width, a=1, i;
+    printf("Please, enter length and width of rectangle: ");
+    scanf("%d%d", &length, &width);
+
+    for (int i = 0; i < width; i++)
+    {
+        for (int j = 0; j < length; j++){
+            printf("%d ", a);
+            a = !a;
+        }
+        a = i%2;
+        printf("\n");
+    }
+}
+
 
 void palindrome_triangle(){
     int n, a=0;
@@ -589,7 +605,7 @@ void prime_number_square(){
 
 int main()
 {
-    prime_number_square();
+    binary_number_rectangle();
     main();
 
     return 0;
