@@ -498,8 +498,7 @@ void binary_number_rectangle(){
     printf("Please, enter length and width of rectangle: ");
     scanf("%d%d", &length, &width);
 
-    for (int i = 0; i < width; i++)
-    {
+    for (int i = 0; i < width; i++){
         for (int j = 0; j < length; j++){
             printf("%d ", a);
             a = !a;
@@ -516,6 +515,21 @@ void inverted_binary_number_rectangle(){
     for (int i = 0; i < width; i++)
     {
         for (int j = 0; j < length; j++){
+            printf("%d ", !a);
+            a = !a;
+        }
+        a = i%2;
+        printf("\n");
+    }
+}
+void binary_number_square(){
+    int n, a=1, i;
+    printf("Please, enter a number: ");
+    scanf("%d", &n);
+
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++){
             printf("%d ", !a);
             a = !a;
         }
@@ -620,7 +634,7 @@ void prime_number_square(){
 
 int main()
 {
-    inverted_binary_number_rectangle();
+    binary_number_square();
     main();
 
     return 0;
