@@ -537,6 +537,21 @@ void binary_number_square(){
         printf("\n");
     }
 }
+void inverted_binary_number_square(){
+    int n, a=1, i;
+    printf("Please, enter a number: ");
+    scanf("%d", &n);
+
+    for (int i = n-1; i>=0; i--)
+    {
+        for (int j = 0; j < n; j++){
+            printf("%d ", a);
+            a = !a;
+        }
+        a = i%2;
+        printf("\n");
+    }
+}
 
 
 void palindrome_triangle(){
@@ -635,7 +650,9 @@ void prime_number_square(){
 int main()
 {
     binary_number_square();
-    main();
+    printf("\n");
+    inverted_binary_number_square();
+    // main();
 
     return 0;
 }
