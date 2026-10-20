@@ -646,12 +646,34 @@ void prime_number_square(){
     }
 }
 
+void prime_number_rhombus(){
+    int n, x=2;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    for (int i = 0; i < n; i++){
+        for (int j = 0; j < i; j++)
+            printf("  ");
+        for(int j=0; j<n;){
+            if(is_prime(x)){
+                if(x<=9)
+                    printf("%d%d    ", 0, x);
+                else
+                    printf("%d    ", x);
+                j++;
+            }
+            x++;
+        }
+        printf("\n");
+    }
+}
+
+
 
 int main()
 {
-    binary_number_square();
+    prime_number_rhombus();
     printf("\n");
-    inverted_binary_number_square();
     // main();
 
     return 0;
