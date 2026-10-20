@@ -688,13 +688,50 @@ void prime_number_left_rhombus(){
     }
 }
 
+void prime_number_rhombus(){
+    int n, x=2;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    for (int i = n - 1; i >= 0; i--){
+        for (int j = 0; j < i; j++)
+            printf("  ");
+        for(int j=0; j<n;){
+            if(is_prime(x)){
+                if(x<=9)
+                    printf("%d%d    ", 0, x);
+                else
+                    printf("%d    ", x);
+                j++;
+            }
+            x++;
+        }
+        printf("\n");
+    }
+    for (int i = 0; i < n; i++){
+        for (int j = 0; j < i; j++)
+            printf("  ");
+        for(int j=0; j<n;){
+            if(is_prime(x)){
+                if(x<=9)
+                    printf("%d%d    ", 0, x);
+                else
+                    printf("%d    ", x);
+                j++;
+            }
+            x++;
+        }
+        printf("\n");
+    }
+}
+
 
 
 int main()
 {
-    prime_number_right_rhombus();
+    prime_number_rhombus();
     printf("\n");
-    prime_number_left_rhombus();
+    // prime_number_rhombus();
     // main();
 
     return 0;
