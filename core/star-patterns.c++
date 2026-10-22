@@ -600,7 +600,7 @@ void prime_number_triangle(){
         for(int j=0; j<=i;){
             if(is_prime(x)){
                 printf("%d ", x);
-                 j++;
+                j++;
             }
             x++;
         }
@@ -760,13 +760,31 @@ void inverted_prime_number_rhombus(){
         printf("\n");
     }
 }
+void prime_number_pyramid(){
+    int n, x=2;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j <= n - i - 1; j++)
+            printf("  ");
+        for(int j=0; j<=i;){
+            if(is_prime(x)){
+                printf("%d  ", x);
+                j++;
+            }
+            x++;
+        }
+
+        printf("\n");
+    }
+}
 
 
 
-
-int main()
-{
-    inverted_prime_number_rhombus();
+int main(){   
+    prime_number_pyramid();
     printf("\n");
     // prime_number_rhombus();
     // main();
