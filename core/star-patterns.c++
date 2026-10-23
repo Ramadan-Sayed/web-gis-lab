@@ -799,11 +799,45 @@ void inverted_prime_number_pyramid(){
         printf("\n");
     }
 }
+void prime_number_diamond(){
+    int n, x=2;
+    printf("Enter a number: ");
+    scanf("%d", &n);
 
+    for (int i = 0; i < n / 2; i++)
+    {
+        for (int j = 0; j <= n - i - 1; j++)
+            printf("  ");
+        for(int j=0; j<=i;){
+            if(is_prime(x)){
+                printf("%d  ", x);
+                j++;
+            }
+            x++;
+        }
+
+        printf("\n");
+    }
+
+    for (int i = n / 2; i >= 0; i--)
+    {
+        for (int j = 0; j <= n - i - 1; j++)
+            printf("  ");
+        for(int j=0; j<=i;){
+            if(is_prime(x)){
+                printf("%d  ", x);
+                j++;
+            }
+            x++;
+        }
+
+        printf("\n");
+    }
+}
 
 
 int main(){   
-    inverted_prime_number_pyramid();
+    prime_number_diamond();
     printf("\n");
     // prime_number_rhombus();
     // main();
