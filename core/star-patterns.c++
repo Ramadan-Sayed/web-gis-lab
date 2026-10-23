@@ -804,8 +804,7 @@ void prime_number_diamond(){
     printf("Enter a number: ");
     scanf("%d", &n);
 
-    for (int i = 0; i < n / 2; i++)
-    {
+    for (int i = 0; i < n / 2; i++){
         for (int j = 0; j <= n - i - 1; j++)
             printf("  ");
         for(int j=0; j<=i;){
@@ -815,12 +814,10 @@ void prime_number_diamond(){
             }
             x++;
         }
-
         printf("\n");
     }
 
-    for (int i = n / 2; i >= 0; i--)
-    {
+    for (int i = n / 2; i >= 0; i--){
         for (int j = 0; j <= n - i - 1; j++)
             printf("  ");
         for(int j=0; j<=i;){
@@ -830,14 +827,60 @@ void prime_number_diamond(){
             }
             x++;
         }
+        printf("\n");
+    }
+}
+void prime_number_hollow_diamond(){
+    int n, x = 2;
+    printf("Enter a number: ");
+    scanf("%d", &n);
 
+    for (int i = 0; i < n / 2; i++) {
+        for (int j = 0; j < (n / 2) - i; j++)
+            printf("  ");
+        for (int j = 0; j <= 2 * i; j++) {
+            if (j == 0 || j == 2 * i) {
+                while (!is_prime(x)) {
+                    x++;
+                }
+                if(x<=9)
+                    printf("0%d ", x);
+                else
+                    printf("%d ", x);
+                x++;
+            } else {
+                printf("    "); 
+            }
+        }
+        printf("\n");
+    }
+
+    for (int i = n / 2; i >= 0; i--) {
+        for (int j = 0; j < (n / 2) - i; j++)
+            printf("  ");
+
+        for (int j = 0; j <= 2 * i; j++) {
+            if (j == 0 || j == 2 * i) {
+                while (!is_prime(x)) {
+                    x++;
+                }
+                if(x<=9)
+                    printf("0%d ", x);
+                else
+                    printf("%d ", x);
+                x++;
+            } 
+            else {
+                printf("    "); 
+            }
+        }
         printf("\n");
     }
 }
 
 
 int main(){   
-    prime_number_diamond();
+    prime_number_hollow_diamond();
     printf("\n");
     // prime_number_rhombus();
     // main();
