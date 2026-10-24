@@ -877,10 +877,26 @@ void prime_number_hollow_diamond(){
         printf("\n");
     }
 }
+void prime_number_exponential_increasing()
+{
+    int n, x=2;
+    printf("Enter a number: ");
+    scanf("%d", &n);
 
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < pow(2, i); j++){
+            while (!is_prime(x)) 
+                    x++;
+            printf("%d  ", x);
+            x++;
+        }
+        printf("\n");
+    }
+}
 
 int main(){   
-    prime_number_hollow_diamond();
+    prime_number_exponential_increasing();
     printf("\n");
     // prime_number_rhombus();
     // main();
