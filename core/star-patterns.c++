@@ -894,9 +894,26 @@ void prime_number_exponential_increasing()
         printf("\n");
     }
 }
+void inverted_prime_number_exponential_increasing()
+{
+    int n, x=2;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    for (int i = n-1; i>=0; i--)
+    {
+        for (int j = 0; j < pow(2, i); j++){
+            while (!is_prime(x)) 
+                    x++;
+            printf("%d  ", x);
+            x++;
+        }
+        printf("\n");
+    }
+}
 
 int main(){   
-    prime_number_exponential_increasing();
+    inverted_prime_number_exponential_increasing();
     printf("\n");
     // prime_number_rhombus();
     // main();
