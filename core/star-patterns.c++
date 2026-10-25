@@ -582,6 +582,25 @@ void inverted_palindrome_triangle(){
         printf("\n");
     }
 }
+void palindrome_rectangle(){
+    int width, length;
+    start:
+    printf("Enter a Width and Length (length should be Odd number): ");
+    scanf("%d%d", &width, &length);
+    if(length%2==0)
+        goto start;
+
+    for(int i = 0; i < width; i++){
+        int a = 0; 
+        int middle = length / 2; 
+        for(int j = 0; j < length; j++){
+            a = a<0 ? 0: (a>25 ? 25 : a);
+            printf("%c ", 'A' + a);
+            a += j<middle? 1: -1;
+        }
+        printf("\n");
+    }
+}
 
 bool is_prime(int n){
     if(n<=1)
@@ -894,8 +913,7 @@ void prime_number_exponential_increasing()
         printf("\n");
     }
 }
-void inverted_prime_number_exponential_increasing()
-{
+void inverted_prime_number_exponential_increasing(){
     int n, x=2;
     printf("Enter a number: ");
     scanf("%d", &n);
@@ -911,12 +929,9 @@ void inverted_prime_number_exponential_increasing()
         printf("\n");
     }
 }
-
 int main(){   
-    inverted_prime_number_exponential_increasing();
-    printf("\n");
-    // prime_number_rhombus();
-    // main();
+    palindrome_rectangle();
+    main();
 
     return 0;
 }
