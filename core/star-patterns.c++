@@ -623,7 +623,6 @@ void palindrome_hollow_rectangle(){
         printf("\n");
     }
 }
-
 void symmetric_palindrome_matrix(){
     int width, length;
     start:
@@ -645,6 +644,26 @@ void symmetric_palindrome_matrix(){
         printf("\n");
     }
 }
+void palindrome_square(){
+    int n;
+    start:
+    printf("Enter a number of square side (number should be Odd number): ");
+    scanf("%d", &n);
+    if(n%2==0)
+        goto start;
+
+    for(int i = 0; i < n; i++){
+        int a = 0; 
+        int middle = n / 2; 
+        for(int j = 0; j < n; j++){
+            a = a<0 ? 0: (a>25 ? 25 : a);
+            printf("%c  ", 'A' + a);
+            a += j<middle? 1: -1;
+        }
+        printf("\n");
+    }
+}
+
 
 bool is_prime(int n){
     if(n<=1)
@@ -976,8 +995,8 @@ void inverted_prime_number_exponential_increasing(){
 
 
 int main(){   
-    palindrome_hollow_rectangle();
-    main();
+    palindrome_square();
+    
 
     return 0;
 }
