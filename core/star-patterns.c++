@@ -601,6 +601,29 @@ void palindrome_rectangle(){
         printf("\n");
     }
 }
+void palindrome_hollow_rectangle(){
+    int width, length;
+    start:
+    printf("Enter a Width and Length (length should be Odd number): ");
+    scanf("%d%d", &width, &length);
+    if(length%2==0)
+        goto start;
+
+    for(int i = 0; i < width; i++){
+        int a = 0; 
+        int middle = length / 2; 
+        for(int j = 0; j < length; j++){
+            a = a<0 ? 0: (a>25 ? 25 : a);
+            if (i == 0 || i == width - 1 || j == 0 || j == length - 1)
+                printf("%c ", 'A' + a);
+            else
+                printf("  ");
+            a += j<middle? 1: -1;
+        }
+        printf("\n");
+    }
+}
+
 void symmetric_palindrome_matrix(){
     int width, length;
     start:
@@ -608,7 +631,7 @@ void symmetric_palindrome_matrix(){
     scanf("%d%d", &width, &length);
     if(width % 2 == 0 || length % 2 == 0)
         goto start;
-        
+
     int center_i = width / 2;
     int center_j = length / 2;
     for(int i = 0; i < width; i++){
@@ -950,8 +973,10 @@ void inverted_prime_number_exponential_increasing(){
         printf("\n");
     }
 }
+
+
 int main(){   
-    symmetric_palindrome_matrix();
+    palindrome_hollow_rectangle();
     main();
 
     return 0;
