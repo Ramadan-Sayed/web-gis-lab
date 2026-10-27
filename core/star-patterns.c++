@@ -663,6 +663,29 @@ void palindrome_square(){
         printf("\n");
     }
 }
+void palindrome_anti_diagonal_square(){
+    int n;
+    start:
+    printf("Enter a number of square side (number should be Odd number): ");
+    scanf("%d", &n);
+    if(n%2==0)
+        goto start;
+
+    for(int i = 0; i < n; i++){
+        int a = 0; 
+        int middle = n / 2; 
+        for(int j = 0; j < n; j++){
+            a = a<0 ? 0: (a>25 ? 25 : a);
+            if (i == 0 || i == n-1  || j == n-i-1)
+                printf("%c  ", 'A' + a);
+            else
+                printf("   ");
+            
+            a += j<middle? 1: -1;
+        }
+        printf("\n");
+    }
+}
 void palindrome_hollow_square(){
     int n;
     start:
@@ -1018,7 +1041,6 @@ void inverted_prime_number_exponential_increasing(){
 
 
 int main(){   
-    palindrome_hollow_square();
     hollow_square_star();
     
 
