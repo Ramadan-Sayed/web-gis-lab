@@ -841,6 +841,23 @@ void palindrome_pyramid(){
         printf("\n");
     }
 }
+void inverted_palindrome_pyramid(){
+    int n;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    for (int i=n-1; i>=0; i--){
+        int a = 0; 
+        for (int j = 0; j <= n - i - 1; j++)
+            printf("   ");
+        for(int j=0; j<=2*i; j++){
+            a = a<0 ? 0: (a>25 ? 25 : a);
+            printf("%c  ", 'A' + a);
+            a += j<i? 1: -1;
+        }
+        printf("\n");
+    }
+}
 
 bool is_prime(int n){
     if(n<=1)
@@ -1172,7 +1189,7 @@ void inverted_prime_number_exponential_increasing(){
 
 
 int main(){   
-    palindrome_pyramid();
+    inverted_palindrome_pyramid();
     main();
     
 
