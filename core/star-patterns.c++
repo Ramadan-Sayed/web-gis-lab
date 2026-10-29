@@ -802,6 +802,29 @@ void palindrome_plus_sign(){
         printf("\n");
     }
 }
+void palindrome_complex_cross(){
+    int n;
+    start:
+    printf("Enter a number (this number should be Odd number): ");
+    scanf("%d", &n);
+    if(n%2==0)
+        goto start;
+
+    for(int i = 0; i < n; i++){
+        int a = 0; 
+        int middle = n / 2; 
+        for(int j = 0; j < n; j++){
+            a = a<0 ? 0: (a>25 ? 25 : a);
+            if ( j == i || j==n-i-1 || i==n/2 || j==n/2)
+                printf("%c  ", 'A' + a);
+            else
+                printf("   ");
+            
+            a += j<middle? 1: -1;
+        }
+        printf("\n");
+    }
+}
 
 bool is_prime(int n){
     if(n<=1)
@@ -1133,7 +1156,7 @@ void inverted_prime_number_exponential_increasing(){
 
 
 int main(){   
-    palindrome_plus_sign();
+    // palindrome_plus();
     main();
     
 
