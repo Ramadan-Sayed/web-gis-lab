@@ -1271,9 +1271,31 @@ void prime_main_diagonal_square(){
         printf("\n");
     }
 }
+void prime_anti_diagonal_square(){
+    int n, x=2;
+    start:
+    printf("Enter a number of square side (number should be Odd number): ");
+    scanf("%d", &n);
+    if(n%2==0)
+        goto start;
+
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n; j++){
+            if (i == 0 || i == n-1  || j == n-i-1){
+                while (!is_prime(x)) 
+                        x++;
+                printf("%d  ", x);
+                x++;
+            }
+            else
+                printf("   ");
+        }
+        printf("\n");
+    }
+}
 
 int main(){   
-    prime_main_diagonal_square();
+    prime_anti_diagonal_square();
 
     
 
