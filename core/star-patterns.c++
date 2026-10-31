@@ -553,7 +553,6 @@ void inverted_binary_number_square(){
     }
 }
 
-
 void palindrome_triangle(){
     int n, a=0;
     printf("Enter a number: ");
@@ -922,6 +921,7 @@ void palindrome_hollow_diamond(){
 }
 
 
+
 bool is_prime(int n){
     if(n<=1)
         return false;
@@ -1249,11 +1249,32 @@ void inverted_prime_number_exponential_increasing(){
         printf("\n");
     }
 }
+void prime_main_diagonal_square(){
+    int n, x=2;
+    start:
+    printf("Enter a number of square side (number should be Odd number): ");
+    scanf("%d", &n);
+    if(n%2==0)
+        goto start;
 
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n; j++){
+            if (i == 0 || i == n-1  || j == i){
+                while (!is_prime(x)) 
+                        x++;
+                printf("%d  ", x);
+                x++;
+            }
+            else
+                printf("   ");
+        }
+        printf("\n");
+    }
+}
 
 int main(){   
-    palindrome_hollow_diamond();
-    main();
+    prime_main_diagonal_square();
+
     
 
     return 0;
