@@ -919,6 +919,23 @@ void palindrome_hollow_diamond(){
         printf("\n");
     }
 }
+void palindrome_number_exponential_increasing(){
+    int n;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    for (int i = 0; i < n; i++){
+        int a=0;
+        int row_length = (int)pow(2, i);
+        int middle = row_length / 2;
+        for (int j=0; j<row_length; j++){
+            a = a<0 ? 0: (a>25 ? 25 : a);
+            printf("%c  ", 'A' + a);
+            a += (j < middle) ? 1 : -1;
+        }
+        printf("\n");
+    }
+}
 
 bool is_prime(int n){
     if(n<=1)
@@ -1214,8 +1231,7 @@ void prime_number_hollow_diamond(){
         printf("\n");
     }
 }
-void prime_number_exponential_increasing()
-{
+void prime_number_exponential_increasing(){
     int n, x=2;
     printf("Enter a number: ");
     scanf("%d", &n);
@@ -1315,7 +1331,7 @@ void prime_both_diagonal_square(){
 }
 
 int main(){   
-    prime_both_diagonal_square();
+    palindrome_number_exponential_increasing();
 
     
 
