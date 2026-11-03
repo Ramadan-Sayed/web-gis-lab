@@ -552,6 +552,24 @@ void inverted_binary_number_square(){
         printf("\n");
     }
 }
+void binary_pyramid(){
+    int n;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    for (int i = 0; i < n; i++){
+        int a =1;
+        for (int j = 0; j <= n - i - 1; j++)
+            printf("   ");
+        for(int j=0; j<=2*i; j++){
+            printf("%d  ", a);
+            a = !a;
+        }
+        a = i%2;
+        printf("\n");
+    }
+}
+
 
 void palindrome_triangle(){
     int n, a=0;
@@ -1331,7 +1349,7 @@ void prime_both_diagonal_square(){
 }
 
 int main(){   
-    palindrome_number_exponential_increasing();
+    binary_pyramid();
 
     
 
