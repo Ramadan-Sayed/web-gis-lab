@@ -613,6 +613,33 @@ void binary_left_rhombus(){
         printf("\n");
     }
 }
+void binary_rhombus(){
+    int n, a=1;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < i; j++)
+            printf("  ");
+        for (int j = 0; j < n; j++){
+            printf("%d  ", a);
+            a = !a;
+        }
+        a = i%2;
+        printf("\n");
+    }
+    for (int i = n - 1; i >= 0; i--){
+        for (int j = 0; j < i; j++)
+            printf("  ");
+        for (int j = 0; j < n; j++){
+            printf("%d  ", a);
+            a = !a;
+        }
+        a = i%2;
+        printf("\n");
+    }
+}
 
 
 void palindrome_triangle(){
@@ -1393,7 +1420,7 @@ void prime_both_diagonal_square(){
 }
 
 int main(){   
-    binary_left_rhombus();
+    binary_rhombus();
 
     
 
