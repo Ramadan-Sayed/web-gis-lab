@@ -1025,6 +1025,27 @@ void palindrome_number_exponential_increasing(){
         printf("\n");
     }
 }
+void palindrome_left_rhombus(){
+    int n, a, middle;
+    start:
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    if(n%2==0)
+        goto start;
+
+    for (int i = 0; i < n; i++){
+        for (int j = 0; j < i; j++)
+            printf("  ");
+        a =0;
+        middle = n / 2; 
+        for(int j = 0; j < n; j++){
+            a = a<0 ? 0: (a>25 ? 25 : a);
+            printf("%c  ", 'A' + a);
+            a += j<middle? 1: -1;
+        }
+        printf("\n");
+    }
+}
 
 bool is_prime(int n){
     if(n<=1)
@@ -1420,7 +1441,7 @@ void prime_both_diagonal_square(){
 }
 
 int main(){   
-    binary_rhombus();
+    palindrome_left_rhombus();
 
     
 
