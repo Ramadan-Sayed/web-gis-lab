@@ -640,6 +640,27 @@ void binary_rhombus(){
         printf("\n");
     }
 }
+void binary_plus_sign(){
+    int n, a=1;
+    start:
+    printf("Enter a number (this number should be Odd number): ");
+    scanf("%d", &n);
+    if(n%2==0)
+        goto start;
+
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n; j++){
+            if ( i==n/2 || j==n/2){
+                printf("%d  ", a);
+                a = !a;
+            }
+            else
+                printf("   ");
+        }
+        a = i%2;
+        printf("\n");
+    }
+}
 
 
 void palindrome_triangle(){
@@ -1520,7 +1541,7 @@ void prime_plus_sign(){
 
 
 int main(){   
-    prime_plus_sign();
+    binary_plus_sign();
 
     
 
