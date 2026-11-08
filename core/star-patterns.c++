@@ -567,6 +567,24 @@ void inverted_binary_number_square(){
         printf("\n");
     }
 }
+void binary_hollow_square(){
+    int side, a=1;
+    printf("Enter a side of square: ");
+    scanf("%d", &side);
+    for (int i = 0; i < side; i++)
+    {
+        for (int j = 0; j < side; j++){
+            
+            if (i == 0 || i == side - 1 || j == 0 || j == side-1)
+                printf("%d  ", a);
+            else
+                printf("   ");
+            a = !a;
+        }
+        a = i%2;
+        printf("\n");
+    }
+}
 void binary_pyramid(){
     int n;
     printf("Enter a number: ");
