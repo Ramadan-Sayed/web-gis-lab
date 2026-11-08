@@ -702,7 +702,6 @@ void binary_plus_sign(){
 
 
 
-
 void palindrome_triangle(){
     int n, a=0;
     printf("Enter a number: ");
