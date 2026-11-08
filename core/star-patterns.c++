@@ -502,6 +502,26 @@ void binary_number_rectangle(){
         printf("\n");
     }
 }
+void binary_hollow_rectangle(){
+    int width, length, a=1;
+    start:
+    printf("Enter a Width and Length (length should be Odd number): ");
+    scanf("%d%d", &width, &length);
+    if(length%2==0)
+        goto start;
+
+    for(int i = 0; i < width; i++){ 
+        for(int j = 0; j < length; j++){
+            if (i == 0 || i == width - 1 || j == 0 || j == length - 1)
+                printf("%d ", a);
+            else
+                printf("  ");
+            a = !a;
+        }
+        a = i%2;
+        printf("\n");
+    }
+}
 void inverted_binary_number_rectangle(){
     int length, width, a=1, i;
     printf("Please, enter length and width of rectangle: ");
@@ -661,6 +681,8 @@ void binary_plus_sign(){
         printf("\n");
     }
 }
+
+
 
 
 void palindrome_triangle(){
@@ -1541,7 +1563,7 @@ void prime_plus_sign(){
 
 
 int main(){   
-    binary_plus_sign();
+    binary_hollow_rectangle();
 
     
 
