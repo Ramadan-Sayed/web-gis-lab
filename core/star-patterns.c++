@@ -762,7 +762,32 @@ void binary_both_diagonal_square(){
         printf("\n");
     }
 }
+void binary_diamond(){
+    int n, a=1;
+    printf("Enter a number: ");
+    scanf("%d", &n);
 
+    for (int i = 0; i < n; i++){
+        for (int j = 0; j <= n - i - 1; j++)
+            printf("   ");
+        for(int j=0; j<=2*i; j++){
+                printf("%d  ", a);
+                a = !a;
+        }
+        a = i%2;
+        printf("\n");
+    }
+    for (int i=n-1; i>=0; i--){
+        for (int j = 0; j <= n - i - 1; j++)
+            printf("   ");
+        for(int j=0; j<=2*i; j++){
+                printf("%d  ", a);
+                a = !a;
+        }
+        a = i%2;
+        printf("\n");
+    }
+}
 
 void palindrome_triangle(){
     int n, a=0;
@@ -1642,7 +1667,7 @@ void prime_plus_sign(){
 
 
 int main(){   
-    binary_both_diagonal_square();
+    binary_diamond();
 
     
 
