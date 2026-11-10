@@ -741,6 +741,27 @@ void binary_anti_diagonal_square(){
         printf("\n");
     }
 }
+void binary_both_diagonal_square(){
+    int n, a=1;
+    start:
+    printf("Enter a number of square side (number should be Odd number): ");
+    scanf("%d", &n);
+    if(n%2==0)
+        goto start;
+
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n; j++){
+            if (i == 0 || i == n-1 || j == i || j == n-i-1){
+                printf("%d  ", a);
+                a = !a;
+            }
+            else
+                printf("   ");
+        }
+        a = i%2;
+        printf("\n");
+    }
+}
 
 
 void palindrome_triangle(){
@@ -1621,7 +1642,7 @@ void prime_plus_sign(){
 
 
 int main(){   
-    binary_anti_diagonal_square();
+    binary_both_diagonal_square();
 
     
 
