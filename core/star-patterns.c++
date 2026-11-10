@@ -777,12 +777,44 @@ void binary_diamond(){
         a = i%2;
         printf("\n");
     }
-    for (int i=n-1; i>=0; i--){
+    for (int i=n-2; i>=0; i--){
         for (int j = 0; j <= n - i - 1; j++)
             printf("   ");
         for(int j=0; j<=2*i; j++){
                 printf("%d  ", a);
                 a = !a;
+        }
+        a = i%2;
+        printf("\n");
+    }
+}
+void binary_hollow_diamond(){
+    int n, a=1;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    for (int i = 0; i < n; i++){
+        for (int j = 0; j <= n - i - 1; j++)
+            printf("    ");
+        for(int j=0; j<=2*i; j++){
+            if(j==0 || j==2*i)
+                printf("%d  ", a);
+            else 
+                printf("    ");
+            a = !a;
+        }
+        a = i%2;
+        printf("\n");
+    }
+    for (int i=n-2; i>=0; i--){
+        for (int j = 0; j <= n - i - 1; j++)
+            printf("    ");
+        for(int j=0; j<=2*i; j++){
+            if(j==0 || j==2*i)
+                printf("%d  ", a);
+            else 
+                printf("    ");
+            a = !a;
         }
         a = i%2;
         printf("\n");
@@ -1667,7 +1699,7 @@ void prime_plus_sign(){
 
 
 int main(){   
-    binary_diamond();
+    binary_hollow_diamond();
 
     
 
