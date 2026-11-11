@@ -762,6 +762,27 @@ void binary_both_diagonal_square(){
         printf("\n");
     }
 }
+void binary_complex_cross(){
+    int n, a=1;
+    start:
+    printf("Enter a number (this number should be Odd number): ");
+    scanf("%d", &n);
+    if(n%2==0)
+        goto start;
+
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n; j++){
+            if ( j == i || j==n-i-1 || i==n/2 || j==n/2){
+                printf("%d  ", a);
+                a = !a;
+            }
+            else
+                printf("   ");
+        }
+        a = i%2;
+        printf("\n");
+    }
+}
 void binary_diamond(){
     int n, a=1;
     printf("Enter a number: ");
@@ -820,6 +841,8 @@ void binary_hollow_diamond(){
         printf("\n");
     }
 }
+
+
 
 void palindrome_triangle(){
     int n, a=0;
@@ -1699,7 +1722,7 @@ void prime_plus_sign(){
 
 
 int main(){   
-    binary_hollow_diamond();
+    binary_complex_cross();
 
     
 
