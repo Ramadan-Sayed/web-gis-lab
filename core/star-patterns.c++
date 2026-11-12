@@ -883,7 +883,21 @@ void binary_hollow_diamond(){
         printf("\n");
     }
 }
+void binary_number_exponential_increasing(){
+    int n, a=1, row_length;
+    printf("Enter a number: ");
+    scanf("%d", &n);
 
+    for (int i = 0; i < n; i++){
+        row_length = (int)pow(2, i);
+        for (int j=0; j<row_length; j++){
+            printf("%d ", a);
+            a = !a;
+        }
+        a = i%2;
+        printf("\n");
+    }
+}
 
 
 void palindrome_triangle(){
@@ -1764,7 +1778,7 @@ void prime_plus_sign(){
 
 
 int main(){   
-    binary_square_with_plus();
+    binary_number_exponential_increasing();
 
     
 
