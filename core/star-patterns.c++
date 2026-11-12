@@ -804,6 +804,27 @@ void binary_square_with_diagonals(){
         printf("\n");
     }
 }
+void binary_square_with_plus(){
+    int n, a=1;
+    start:
+    printf("Enter a number (this number should be Odd number): ");
+    scanf("%d", &n);
+    if(n%2==0)
+        goto start;
+
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n; j++){
+            if ( i==0 || j==0 || j==n-1 || i==n-1 || i==n/2 || j==n/2 ){
+                printf("%d  ", a);
+                a = !a;
+            }
+            else
+                printf("   ");
+        }
+        a = i%2;
+        printf("\n");
+    }
+}
 void binary_diamond(){
     int n, a=1;
     printf("Enter a number: ");
@@ -1743,7 +1764,7 @@ void prime_plus_sign(){
 
 
 int main(){   
-    binary_square_with_diagonals();
+    binary_square_with_plus();
 
     
 
