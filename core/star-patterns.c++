@@ -825,6 +825,27 @@ void binary_square_with_plus(){
         printf("\n");
     }
 }
+void binary_diagonals_with_plus(){
+    int n, a=1;
+    start:
+    printf("Enter a number (this number should be Odd number): ");
+    scanf("%d", &n);
+    if(n%2==0)
+        goto start;
+
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n; j++){
+            if ( j == i || j==n-i-1 || i==n/2 || j==n/2 ){
+                printf("%d  ", a);
+                a = !a;
+            }
+            else
+                printf("   ");
+        }
+        a = i%2;
+        printf("\n");
+    }
+}
 void binary_diamond(){
     int n, a=1;
     printf("Enter a number: ");
@@ -913,6 +934,8 @@ void binary_inverted_number_exponential_increasing(){
         printf("\n");
     }
 }
+
+
 
 void palindrome_triangle(){
     int n, a=0;
@@ -1792,7 +1815,7 @@ void prime_plus_sign(){
 
 
 int main(){   
-    binary_inverted_number_exponential_increasing();
+    binary_diagonals_with_plus();
 
     
 
