@@ -898,7 +898,21 @@ void binary_number_exponential_increasing(){
         printf("\n");
     }
 }
+void binary_inverted_number_exponential_increasing(){
+    int n, a=1;
+    printf("Enter a number: ");
+    scanf("%d", &n);
 
+    for (int i = n-1; i>=0; i--)
+    {
+        for (int j = 0; j < pow(2, i); j++){
+            printf("%d ", a);
+            a = !a;
+        }
+        a = i%2;
+        printf("\n");
+    }
+}
 
 void palindrome_triangle(){
     int n, a=0;
@@ -1778,7 +1792,7 @@ void prime_plus_sign(){
 
 
 int main(){   
-    binary_number_exponential_increasing();
+    binary_inverted_number_exponential_increasing();
 
     
 
