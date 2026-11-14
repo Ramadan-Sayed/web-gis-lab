@@ -1789,6 +1789,28 @@ void prime_both_diagonal_square(){
         printf("\n");
     }
 }
+void prime_both_diagonals(){
+    int n, x=2;
+    start:
+    printf("Enter a number (this number should be Odd number): ");
+    scanf("%d", &n);
+    if(n%2==0)
+        goto start;
+
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n; j++){
+            if ( j == i || j==n-i-1 ){
+                while (!is_prime(x)) 
+                    x++;
+                printf("%d  ", x);
+                x++;
+            }
+            else
+                printf("   ");
+        }
+        printf("\n");
+    }
+}
 void prime_plus_sign(){
     int n, x=2;
     start:
@@ -1835,7 +1857,7 @@ void prime_diagonals_with_plus(){
 }
 
 int main(){   
-    prime_diagonals_with_plus();
+    prime_both_diagonals();
 
     
 
