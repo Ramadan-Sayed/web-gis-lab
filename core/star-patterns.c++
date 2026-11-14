@@ -936,7 +936,6 @@ void binary_inverted_number_exponential_increasing(){
 }
 
 
-
 void palindrome_triangle(){
     int n, a=0;
     printf("Enter a number: ");
@@ -1812,10 +1811,31 @@ void prime_plus_sign(){
         printf("\n");
     }
 }
+void prime_diagonals_with_plus(){
+    int n, x=2;
+    start:
+    printf("Enter a number (this number should be Odd number): ");
+    scanf("%d", &n);
+    if(n%2==0)
+        goto start;
 
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n; j++){
+            if ( j == i || j==n-i-1 || i==n/2 || j==n/2 ){
+                while (!is_prime(x)) 
+                    x++;
+                printf("%d  ", x);
+                x++;
+            }
+            else
+                printf("   ");
+        }
+        printf("\n");
+    }
+}
 
 int main(){   
-    binary_diagonals_with_plus();
+    prime_diagonals_with_plus();
 
     
 
