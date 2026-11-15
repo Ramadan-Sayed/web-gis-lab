@@ -2,6 +2,26 @@
 #include <math.h>
 using namespace std;
 
+void circle_star(){
+    int radius;
+    double x, y, dist;
+    printf("Enter circle radius: ");
+    scanf("%d", &radius);
+
+    for(int i=0; i<=2*radius; i++){
+        for(int j=0; j<=2*radius; j++){
+            x = i-radius;
+            y = j-radius;
+            dist = sqrt(x*x*2.0 + y*y);
+            if(dist >= radius-0.35 && dist <= radius+0.35)
+                printf("* ");
+            else 
+                printf("  ");
+        }
+        printf("\n");
+    }
+}
+
 void right_rhombus_star(){
     int n;
     printf("Enter a number: ");
@@ -1857,7 +1877,7 @@ void prime_diagonals_with_plus(){
 }
 
 int main(){   
-    prime_both_diagonals();
+    circle_star();
 
     
 
