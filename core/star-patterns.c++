@@ -1917,10 +1917,33 @@ void prime_circle(){
         printf("\n");
     }
 }
+void prime_inside_circle(){
+    int radius, a=2;
+    double x, y, dist;
+    printf("Enter circle radius: ");
+    scanf("%d", &radius);
+
+    for(int i=0; i<=2*radius; i++){
+        for(int j=0; j<=2*radius; j++){
+            x = i-radius;
+            y = j-radius;
+            dist = sqrt(x*x*2.0 + y*y);
+            if(dist <= radius+0.35){
+                while (!is_prime(a)) 
+                        a++;
+                printf("%d  ", a);
+                a++;
+            }
+            else 
+                printf("  ");
+        }
+        printf("\n");
+    }
+}
 
 
 int main(){   
-    prime_circle();
+    prime_inside_circle();
 
     
 
