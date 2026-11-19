@@ -1,5 +1,6 @@
 #include <iostream>
-#include <math.h>
+#include <cmath>
+#include <cstdlib>
 using namespace std;
 
 void circle_star(){
@@ -1461,6 +1462,33 @@ void palindrome_circle(){
         printf("\n");
     }
 }
+void palindrome_inside_circle(){
+    int radius;
+    double x, y, dist;
+    printf("Enter circle radius: ");
+    scanf("%d", &radius);
+
+    for(int i = 0; i <= 2 * radius; i++){
+        for(int j = 0; j <= 2 * radius; j++){
+            x = i - radius;
+            y = j - radius;
+            dist = sqrt(x * x * 2.0 + y * y);
+
+            if(dist <= radius + 0.35){
+                // تناظر متماثل حول المنتصف الأفقي (j == radius)
+                int offset = radius - abs(j - radius);
+                if(offset < 0) offset = 0;
+                if(offset > 25) offset = 25;
+
+                printf("%c  ", 'A' + offset);
+            }
+            else {
+                printf("  ");
+            }
+        }
+        printf("\n");
+    }
+}
 
 
 bool is_prime(int n){
@@ -1970,7 +1998,7 @@ void prime_inside_circle(){
 
 
 int main(){   
-    palindrome_circle();
+    palindrome_inside_circle();
 
     
 
