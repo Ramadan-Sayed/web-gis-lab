@@ -996,6 +996,31 @@ void binary_circle(){
     }
 }
 
+void binary_inside_circle(){
+    int radius, a=1;
+    double x, y, dist;
+    printf("Enter circle radius: ");
+    scanf("%d", &radius);
+
+    for(int i = 0; i <= 2 * radius; i++){
+        for(int j = 0; j <= 2 * radius; j++){
+            x = i - radius;
+            y = j - radius;
+            dist = sqrt(x * x * 2.0 + y * y);
+
+            if(dist <= radius + 0.35){
+                printf("%d  ", a);
+                a = !a;
+            }
+            else {
+                printf("   ");
+            }
+        }
+        a = i % 2;
+        printf("\n");
+    }
+}
+
 void palindrome_triangle(){
     int n, a=0;
     printf("Enter a number: ");
@@ -2018,7 +2043,7 @@ void prime_inside_circle(){
 
 
 int main(){   
-    binary_circle();
+    binary_inside_circle();
 
     
 
