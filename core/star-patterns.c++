@@ -499,8 +499,7 @@ void inverted_multiplication_table_triangle(){
     }
 }
 
-void binary_number_triangle()
-{
+void binary_number_triangle(){
     int n, a=1, i;
     printf("Enter a number: ");
     scanf("%d", &n);
@@ -974,7 +973,28 @@ void binary_inverted_number_exponential_increasing(){
         printf("\n");
     }
 }
+void binary_circle(){
+    int radius, a=1;
+    double x, y, dist;
+    printf("Enter circle radius: ");
+    scanf("%d", &radius);
 
+    for(int i=0; i<=2*radius; i++){
+        for(int j=0; j<=2*radius; j++){
+            x = i-radius;
+            y = j-radius;
+            dist = sqrt(x*x*2.0 + y*y);
+            if(dist >= radius-0.35 && dist <= radius+0.35){
+                printf("%d  ", a);
+                a = !a;
+            }
+            else 
+                printf("   ");
+        }
+        a = i%2;
+        printf("\n");
+    }
+}
 
 void palindrome_triangle(){
     int n, a=0;
@@ -1998,7 +2018,7 @@ void prime_inside_circle(){
 
 
 int main(){   
-    palindrome_inside_circle();
+    binary_circle();
 
     
 
