@@ -42,6 +42,31 @@ void inside_circle_star(){
     }
 }
 
+void concentric_circles_star(){
+    int radius, step = 3;
+    double x, y, dist;
+    printf("Enter outer radius: ");
+    scanf("%d", &radius);
+
+    for(int i = 0; i <= 2 * radius; i++){
+        for(int j = 0; j <= 2 * radius; j++){
+            x = i - radius;
+            y = j - radius;
+            dist = sqrt(x * x * 2.0 + y * y);
+
+            // رسم حلقات متداخلة على مسافات منتظمة من المركز
+            int ring = (int)round(dist);
+            if(ring > 0 && ring <= radius && ring % step == 0 && fabs(dist - ring) <= 0.35){
+                printf("* ");
+            }
+            else {
+                printf("  ");
+            }
+        }
+        printf("\n");
+    }
+}
+
 void right_rhombus_star(){
     int n;
     printf("Enter a number: ");
@@ -2043,7 +2068,7 @@ void prime_inside_circle(){
 
 
 int main(){   
-    binary_inside_circle();
+    concentric_circles_star();
 
     
 
