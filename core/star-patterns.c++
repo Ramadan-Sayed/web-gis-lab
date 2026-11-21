@@ -2065,10 +2065,37 @@ void prime_inside_circle(){
         printf("\n");
     }
 }
+void prime_concentric_circles(){
+    int radius, step = 3, a=2;
+    double x, y, dist;
+    printf("Enter outer radius: ");
+    scanf("%d", &radius);
+
+    for(int i = 0; i <= 2 * radius; i++){
+        for(int j = 0; j <= 2 * radius; j++){
+            x = i - radius;
+            y = j - radius;
+            dist = sqrt(x * x * 2.0 + y * y);
+
+            // رسم حلقات متداخلة على مسافات منتظمة من المركز
+            int ring = (int)round(dist);
+            if(ring > 0 && ring <= radius && ring % step == 0 && fabs(dist - ring) <= 0.35){
+                while (!is_prime(a)) 
+                        a++;
+                printf("%d  ", a);
+                a++;
+            }
+            else {
+                printf("   ");
+            }
+        }
+        printf("\n");
+    }
+}
 
 
 int main(){   
-    concentric_circles_star();
+    prime_concentric_circles();
 
     
 
