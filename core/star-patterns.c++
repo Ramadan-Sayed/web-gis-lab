@@ -41,7 +41,6 @@ void inside_circle_star(){
         printf("\n");
     }
 }
-
 void concentric_circles_star(){
     int radius, step = 3;
     double x, y, dist;
@@ -66,6 +65,43 @@ void concentric_circles_star(){
         printf("\n");
     }
 }
+
+void circle_compass_grid(){
+    int radius;
+    printf("Enter circle radius: ");
+    scanf("%d", &radius);
+
+    for(int i = 0; i <= 2 * radius; i++){
+        for(int j = 0; j <= 2 * radius; j++){
+            double x = i - radius;
+            double y = j - radius;
+            double dist = sqrt(x * x * 2.0 + y * y);
+
+            int is_center = (i == radius && j == radius);
+            int is_circle = (fabs(dist - radius) <= 0.35);
+            int is_axis   = (i == radius || j == radius);
+            int is_diag   = (i == j || (i + j) == 2 * radius);
+
+            if(is_center){
+                printf("+  ");
+            }
+            else if(is_circle){
+                printf("*  ");
+            }
+            else if(is_axis){
+                printf("|  ");
+            }
+            else if(is_diag){
+                printf("#  ");
+            }
+            else{
+                printf("   ");
+            }
+        }
+        printf("\n");
+    }
+}
+
 
 void right_rhombus_star(){
     int n;
@@ -1070,6 +1106,7 @@ void binary_concentric_circles(){
         printf("\n");
     }
 }
+
 
 
 void palindrome_triangle(){
@@ -2151,7 +2188,7 @@ void prime_concentric_circles(){
 
 
 int main(){   
-    binary_concentric_circles();
+    circle_compass_grid();
 
     
 
