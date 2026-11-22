@@ -1044,6 +1044,33 @@ void binary_inside_circle(){
         printf("\n");
     }
 }
+void binary_concentric_circles(){
+    int radius, step = 3, a=1;
+    double x, y, dist;
+    printf("Enter outer radius: ");
+    scanf("%d", &radius);
+
+    for(int i = 0; i <= 2 * radius; i++){
+        for(int j = 0; j <= 2 * radius; j++){
+            x = i - radius;
+            y = j - radius;
+            dist = sqrt(x * x * 2.0 + y * y);
+
+            // رسم حلقات متداخلة على مسافات منتظمة من المركز
+            int ring = (int)round(dist);
+            if(ring > 0 && ring <= radius && ring % step == 0 && fabs(dist - ring) <= 0.35){
+                printf("%d  ", a);
+                a = !a;
+            }
+            else {
+                printf("   ");
+            }
+        }
+        a = i%2;
+        printf("\n");
+    }
+}
+
 
 void palindrome_triangle(){
     int n, a=0;
@@ -2124,7 +2151,7 @@ void prime_concentric_circles(){
 
 
 int main(){   
-    palindrome_concentric_circles();
+    binary_concentric_circles();
 
     
 
