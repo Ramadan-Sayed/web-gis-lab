@@ -1020,7 +1020,6 @@ void binary_circle(){
         printf("\n");
     }
 }
-
 void binary_inside_circle(){
     int radius, a=1;
     double x, y, dist;
@@ -1559,6 +1558,36 @@ void palindrome_inside_circle(){
         printf("\n");
     }
 }
+void palindrome_concentric_circles(){
+    int radius, step = 3;
+    double x, y, dist;
+    printf("Enter outer radius: ");
+    scanf("%d", &radius);
+
+    for(int i = 0; i <= 2 * radius; i++){
+        for(int j = 0; j <= 2 * radius; j++){
+            x = i - radius;
+            y = j - radius;
+            dist = sqrt(x * x * 2.0 + y * y);
+
+            // رسم حلقات متداخلة على مسافات منتظمة من المركز
+            int ring = (int)round(dist);
+            if(ring > 0 && ring <= radius && ring % step == 0 && fabs(dist - ring) <= 0.35){
+                // تناظر متماثل حول المنتصف الأفقي (j == radius)
+                int offset = radius - abs(j - radius);
+                if(offset < 0) offset = 0;
+                if(offset > 25) offset = 25;
+
+                printf("%c  ", 'A' + offset);
+            }
+            else {
+                printf("   ");
+            }
+        }
+        printf("\n");
+    }
+}
+
 
 
 bool is_prime(int n){
@@ -2095,7 +2124,7 @@ void prime_concentric_circles(){
 
 
 int main(){   
-    prime_concentric_circles();
+    palindrome_concentric_circles();
 
     
 
