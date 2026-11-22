@@ -2185,10 +2185,58 @@ void prime_concentric_circles(){
         printf("\n");
     }
 }
+void hybrid_circle_compass_grid(){
+    int radius;
+    printf("Enter circle radius: ");
+    scanf("%d", &radius);
 
+    int prime_val = 2;
+    int bin_val = 1;
+
+    for(int i = 0; i <= 2 * radius; i++){
+        for(int j = 0; j <= 2 * radius; j++){
+            double x = i - radius;
+            double y = j - radius;
+            double dist = sqrt(x * x * 2.0 + y * y);
+
+            int is_center = (i == radius && j == radius);
+            int is_circle = (fabs(dist - radius) <= 0.35);
+            int is_axis   = (i == radius || j == radius);
+            int is_diag   = (i == j || (i + j) == 2 * radius);
+
+            if(is_center){
+                printf("+  ");
+            }
+            else if(is_circle){
+                while(!is_prime(prime_val)){
+                    prime_val++;
+                }
+                printf("%d  ", prime_val);
+                prime_val++;
+            }
+            else if(is_axis){
+                int dist_from_center = (i == radius) ? abs(j - radius) : abs(i - radius);
+                int offset = radius - dist_from_center;
+                if(offset < 0) offset = 0;
+                if(offset > 25) offset = 25;
+
+                printf("%c  ", 'A' + offset);
+            }
+            else if(is_diag){
+                printf("%d  ", bin_val);
+                bin_val = !bin_val;
+            }
+            else{
+                printf("   ");
+            }
+        }
+        bin_val = i % 2;
+        printf("\n");
+    }
+}
 
 int main(){   
-    circle_compass_grid();
+    hybrid_circle_compass_grid();
 
     
 
