@@ -102,6 +102,36 @@ void circle_compass_grid(){
     }
 }
 
+void upper_arc_star(){
+    int radius;
+    double x, y, dist;
+    printf("Enter radius: ");
+    scanf("%d", &radius);
+
+    for(int i = 0; i <= 2 * radius; i++){
+        char row_buf[256] = "";
+        int pos = 0;
+        int row_has_output = 0;
+
+        for(int j = 0; j <= 2 * radius; j++){
+            x = i - radius;
+            y = j - radius;
+            dist = sqrt(x * x * 2.0 + y * y);
+
+            if(x <= 0 && fabs(dist - radius) <= 0.35){
+                pos += sprintf(row_buf + pos, "*  ");
+                row_has_output = 1;
+            }
+            else{
+                pos += sprintf(row_buf + pos, "   ");
+            }
+        }
+
+        if(row_has_output){
+            printf("%s\n", row_buf);
+        }
+    }
+}
 
 void right_rhombus_star(){
     int n;
@@ -2236,7 +2266,7 @@ void hybrid_circle_compass_grid(){
 }
 
 int main(){   
-    hybrid_circle_compass_grid();
+    upper_arc_star();
 
     
 
