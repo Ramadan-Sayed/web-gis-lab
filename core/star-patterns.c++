@@ -2215,6 +2215,40 @@ void prime_concentric_circles(){
         printf("\n");
     }
 }
+void upper_arc_prime(){
+    int radius, prime_val = 2;
+    double x, y, dist;
+    printf("Enter radius: ");
+    scanf("%d", &radius);
+
+    for(int i = 0; i <= 2 * radius; i++){
+        int row_has_output = 0;
+
+        for(int j = 0; j <= 2 * radius; j++){
+            x = i - radius;
+            y = j - radius;
+            dist = sqrt(x * x * 2.0 + y * y);
+
+            if(x <= 0 && fabs(dist - radius) <= 0.35){
+                while(!is_prime(prime_val)){
+                    prime_val++;
+                }
+                printf("%-3d", prime_val);
+                prime_val++;
+                row_has_output = 1;
+            }
+            else{
+                printf("   ");
+            }
+        }
+
+        if(row_has_output){
+            printf("\n");
+        }
+    }
+}
+
+
 void hybrid_circle_compass_grid(){
     int radius;
     printf("Enter circle radius: ");
@@ -2266,7 +2300,7 @@ void hybrid_circle_compass_grid(){
 }
 
 int main(){   
-    upper_arc_star();
+    upper_arc_prime();
 
     
 
