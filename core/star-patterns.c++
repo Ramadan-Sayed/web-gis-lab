@@ -2355,12 +2355,23 @@ void wave_pattern_core(int is_cosine, int type, int amplitude, int cycles, doubl
     }
 }
 
+void sine_wave_pattern() {
+    int amplitude, cycles, mode;
+    printf("Enter amplitude (e.g. 5): ");
+    scanf("%d", &amplitude);
+    printf("Enter number of cycles (e.g. 2): ");
+    scanf("%d", &cycles);
+    printf("Choose style (1: Star, 2: Binary, 3: Prime, 4: Palindrome): ");
+    scanf("%d", &mode);
+
+    wave_pattern_core(0, mode, amplitude, cycles, 0.15);
+}
 
 
 
 
 int main(){   
-    upper_arc_prime();
+    sine_wave_pattern();
 
     
 
