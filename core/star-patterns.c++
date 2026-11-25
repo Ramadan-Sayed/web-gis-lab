@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cmath>
 #include <cstdlib>
+#define M_PI 3.14159265358979323846
 using namespace std;
 
 void circle_star(){
@@ -2247,8 +2248,6 @@ void upper_arc_prime(){
         }
     }
 }
-
-
 void hybrid_circle_compass_grid(){
     int radius;
     printf("Enter circle radius: ");
@@ -2298,6 +2297,67 @@ void hybrid_circle_compass_grid(){
         printf("\n");
     }
 }
+
+static int next_prime_from(int *p) {
+    while (1) {
+        int val = *p;
+        (*p)++;
+        if (val < 2) continue;
+        int prime = 1;
+        for (int d = 2; d * d <= val; d++) {
+            if (val % d == 0) {
+                prime = 0;
+                break;
+            }
+        }
+        if (prime) return val;
+    }
+}
+
+// type: 1 = star (*), 2 = binary (0/1), 3 = prime, 4 = palindrome ('A'..)
+// is_cosine: 0 = sine, 1 = cosine
+void wave_pattern_core(int is_cosine, int type, int amplitude, int cycles, double step_scale) {
+    int width = (int)(cycles * 2.0 * M_PI / step_scale);
+    if (width < 10) width = 40;
+
+    int prime_val = 2;
+    int bin_val = 1;
+
+    for (int i = 0; i <= 2 * amplitude; i++) {
+        for (int j = 0; j <= width; j++) {
+            double angle = j * step_scale;
+            double trig_val = is_cosine ? cos(angle) : sin(angle);
+            double wave_row = amplitude - trig_val * amplitude;
+
+            if (fabs((double)i - wave_row) <= 0.45) {
+                if (type == 1) {
+                    printf("%-3c", '*');
+                } else if (type == 2) {
+                    printf("%-3d", bin_val);
+                    bin_val = !bin_val;
+                } else if (type == 3) {
+                    int p = next_prime_from(&prime_val);
+                    printf("%-3d", p);
+                } else if (type == 4) {
+                    int offset = amplitude - abs(i - amplitude);
+                    if (offset < 0) offset = 0;
+                    if (offset > 25) offset = 25;
+                    printf("%-3c", 'A' + offset);
+                }
+            } else {
+                printf("   ");
+            }
+        }
+        if (type == 2) {
+            bin_val = i % 2;
+        }
+        printf("\n");
+    }
+}
+
+
+
+
 
 int main(){   
     upper_arc_prime();
