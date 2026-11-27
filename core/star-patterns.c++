@@ -2385,7 +2385,6 @@ static int matches_half_dir(int dir, double x, double y) {
         default: return x <= 0.0;
     }
 }
-
 void directional_half_circle() {
     int radius, dir, filled;
     printf("Enter radius: ");
@@ -2410,6 +2409,18 @@ void directional_half_circle() {
             }
         }
         printf("\n");
+    }
+}
+
+static int get_next_prime(int *p) {
+    while (1) {
+        int val = (*p)++;
+        if (val < 2) continue;
+        int ok = 1;
+        for (int d = 2; d * d <= val; d++) {
+            if (val % d == 0) { ok = 0; break; }
+        }
+        if (ok) return val;
     }
 }
 
