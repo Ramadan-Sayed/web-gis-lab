@@ -2423,9 +2423,58 @@ static int get_next_prime(int *p) {
         if (ok) return val;
     }
 }
+// quad_mode: 0 = كل الأرباع معاً (4 أنماط)، 1..4 = إظهار ربع محدد فقط
+void quadrant_pattern() {
+    int radius, quad_mode, filled;
+    printf("Enter radius: ");
+    scanf("%d", &radius);
+    printf("Quadrant (0: All 4 mixed, 1: Top-Right, 2: Top-Left, 3: Bottom-Left, 4: Bottom-Right): ");
+    scanf("%d", &quad_mode);
+    printf("Style (0: Hollow, 1: Filled): ");
+    scanf("%d", &filled);
+
+    int prime_val = 2;
+    int bin_val = 1;
+
+    for (int i = 0; i <= 2 * radius; i++) {
+        for (int j = 0; j <= 2 * radius; j++) {
+            double x = i - radius;
+            double y = j - radius;
+            double dist = sqrt(x * x * 2.0 + y * y);
+
+            int in_circle = filled ? (dist <= radius + 0.35) : (fabs(dist - radius) <= 0.35);
+
+            // تحديد الربع: 1 (x<=0, y>=0)، 2 (x<=0, y<0)، 3 (x>0, y<0)، 4 (x>0, y>=0)
+            int q = (x <= 0.0) ? ((y >= 0.0) ? 1 : 2) : ((y < 0.0)  ? 3 : 4);
+
+            int allowed = (quad_mode == 0) ? 1 : (q == quad_mode);
+
+            if (in_circle && allowed) {
+                if (q == 1) {
+                    printf("%-3d", get_next_prime(&prime_val));
+                } else if (q == 2) {
+                    printf("%-3d", bin_val);
+                    bin_val = !bin_val;
+                } else if (q == 3) {
+                    int offset = radius - abs((int)y);
+                    if (offset < 0) offset = 0;
+                    if (offset > 25) offset = 25;
+                    printf("%-3c", 'A' + offset);
+                } else {
+                    printf("%-3c", '*');
+                }
+            } else {
+                printf("   ");
+            }
+        }
+        bin_val = i % 2;
+        printf("\n");
+    }
+}
+
 
 int main(){   
-    directional_half_circle();
+    quadrant_pattern();
 
     
 
