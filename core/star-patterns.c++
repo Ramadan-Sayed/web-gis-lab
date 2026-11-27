@@ -2313,7 +2313,6 @@ static int next_prime_from(int *p) {
         if (prime) return val;
     }
 }
-
 // type: 1 = star (*), 2 = binary (0/1), 3 = prime, 4 = palindrome ('A'..)
 // is_cosine: 0 = sine, 1 = cosine
 void wave_pattern_core(int is_cosine, int type, int amplitude, int cycles, double step_scale) {
@@ -2354,7 +2353,6 @@ void wave_pattern_core(int is_cosine, int type, int amplitude, int cycles, doubl
         printf("\n");
     }
 }
-
 void sine_wave_pattern() {
     int amplitude, cycles, mode;
     printf("Enter amplitude (e.g. 5): ");
@@ -2366,7 +2364,6 @@ void sine_wave_pattern() {
 
     wave_pattern_core(0, mode, amplitude, cycles, 0.15);
 }
-
 void cosine_wave_pattern() {
     int amplitude, cycles, mode;
     printf("Enter amplitude (e.g. 5): ");
@@ -2379,9 +2376,45 @@ void cosine_wave_pattern() {
     wave_pattern_core(1, mode, amplitude, cycles, 0.15);
 }
 
+static int matches_half_dir(int dir, double x, double y) {
+    switch (dir) {
+        case 1: return x <= 0.0; // علوي (قبة)
+        case 2: return x >= 0.0; // سفلي
+        case 3: return y >= 0.0; // أيمن
+        case 4: return y <= 0.0; // أيسر
+        default: return x <= 0.0;
+    }
+}
+
+void directional_half_circle() {
+    int radius, dir, filled;
+    printf("Enter radius: ");
+    scanf("%d", &radius);
+    printf("Direction (1: Top/Dome, 2: Bottom, 3: Right, 4: Left): ");
+    scanf("%d", &dir);
+    printf("Style (0: Hollow, 1: Filled): ");
+    scanf("%d", &filled);
+
+    for (int i = 0; i <= 2 * radius; i++) {
+        for (int j = 0; j <= 2 * radius; j++) {
+            double x = i - radius;
+            double y = j - radius;
+            double dist = sqrt(x * x * 2.0 + y * y);
+
+            int in_shape = filled ? (dist <= radius + 0.35) : (fabs(dist - radius) <= 0.35);
+
+            if (matches_half_dir(dir, x, y) && in_shape) {
+                printf("%-3c", '*');
+            } else {
+                printf("   ");
+            }
+        }
+        printf("\n");
+    }
+}
 
 int main(){   
-    cosine_wave_pattern();
+    directional_half_circle();
 
     
 
